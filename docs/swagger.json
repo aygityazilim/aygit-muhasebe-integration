@@ -1,0 +1,1189 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "Bu servis, NES Özel Entegratör üzerinden e-fatura, e-arşiv ve ürün yönetim süreçlerini yönetir.",
+        "title": "Aygıt Muhasebe Entegrasyonu API",
+        "termsOfService": "http://swagger.io/terms/",
+        "contact": {
+            "name": "API Destek",
+            "url": "http://www.aygit.com/destek",
+            "email": "support@aygit.com"
+        },
+        "license": {
+            "name": "Apache 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        },
+        "version": "1.0"
+    },
+    "host": "localhost:3000",
+    "basePath": "/",
+    "paths": {
+        "/hooks/v1/nes/staticcodes/update": {
+            "post": {
+                "description": "NES veya diğer entegratör sistemlerinden gelen \"Statik Kodlar Güncellendi\" uyarılarını işler.",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webhooks"
+                ],
+                "summary": "NES Statik Kod Güncelleme Bildirimi",
+                "parameters": [
+                    {
+                        "description": "Güncelleme Detayları",
+                        "name": "payload",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": true
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/hooks/v1/nes/status": {
+            "post": {
+                "description": "NES Özel Entegratör tarafından gönderilen döküman durum güncellemelerini işler.",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webhooks"
+                ],
+                "summary": "NES Durum Güncellemesi Bildirimi",
+                "parameters": [
+                    {
+                        "description": "Durum Güncelleme Detayları",
+                        "name": "payload",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": true
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/account/default-document-parameter": {
+            "get": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
+                "description": "Fatura Senaryosu, Gönderim Tipi, Satış Kanalı ayarlarını döner. NES Özel Entegratör API /v1/accountDefaultDocumentParameter ucunu çağırır.",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Account"
+                ],
+                "summary": "Firmanın Varsayılan Doküman Parametresini döner",
+                "responses": {
+                    "200": {
+                        "description": "Başarılı istek. Örnek: {'eInvoiceInvoiceProfile': 'string', 'eArchiveSendType': 'string', 'eArchiveSalesPlatform': 'string'}",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": true
+                        }
+                    },
+                    "401": {
+                        "description": "Kullanıcı firma bilgisi bulunamadı",
+                        "schema": {
+                            "$ref": "#/definitions/errors.AppError"
+                        }
+                    },
+                    "403": {
+                        "description": "Yetkisiz Erişim | Aşağıdaki Scopelardan birisine sahip olmadığınız durumda dönülür",
+                        "schema": {
+                            "$ref": "#/definitions/errors.AppError"
+                        }
+                    },
+                    "500": {
+                        "description": "Sunucu hatası veya NES servis hatası",
+                        "schema": {
+                            "$ref": "#/definitions/errors.AppError"
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/account/document-archives": {
+            "get": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
+                "description": "Belge arşivi taleplerinize bu uç ile ulaşabilirsiniz. NES Özel Entegratör API /v1/accountDocumentArchives ucunu çağırır.",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Account"
+                ],
+                "summary": "Belge arşivi talebi listeler",
+                "responses": {
+                    "200": {
+                        "description": "Başarılı istek. Dönen liste içerisinde arşiv talepleri bulunur.",
+                        "schema": {
+                            "type": "array",
+                            "items": {}
+                        }
+                    },
+                    "401": {
+                        "description": "Kullanıcı firma bilgisi bulunamadı",
+                        "schema": {
+                            "$ref": "#/definitions/errors.AppError"
+                        }
+                    },
+                    "403": {
+                        "description": "Yetkisiz Erişim | Aşağıdaki Scopelardan birisine sahip olmadığınız durumda dönülür",
+                        "schema": {
+                            "$ref": "#/definitions/errors.AppError"
+                        }
+                    },
+                    "500": {
+                        "description": "Sunucu hatası veya NES servis hatası",
+                        "schema": {
+                            "$ref": "#/definitions/errors.AppError"
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/despatches/incoming": {
+            "get": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
+                "tags": [
+                    "Despatches"
+                ],
+                "summary": "Gelen E-İrsaliyeleri Listele",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": true
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/despatches/outgoing": {
+            "get": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
+                "tags": [
+                    "Despatches"
+                ],
+                "summary": "Giden E-İrsaliyeleri Listele",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": true
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/despatches/upload": {
+            "post": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
+                "consumes": [
+                    "multipart/form-data"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Despatches"
+                ],
+                "summary": "Yeni İrsaliye Yükle (Taslak)",
+                "parameters": [
+                    {
+                        "type": "file",
+                        "description": "İrsaliye XML Dosyası",
+                        "name": "File",
+                        "in": "formData",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": true
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/despatches/{uuid}/answer": {
+            "post": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
+                "tags": [
+                    "Despatches"
+                ],
+                "summary": "İrsaliye Yanıtı Gönder",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "İrsaliye UUID",
+                        "name": "uuid",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "description": "Yanıt Detayları",
+                        "name": "answer",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": true
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": true
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/earchive/invoices": {
+            "get": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
+                "tags": [
+                    "E-Archive"
+                ],
+                "summary": "E-Arşiv Faturalarını Listele",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": true
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/earchive/invoices/cancel": {
+            "post": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
+                "consumes": [
+                    "application/json"
+                ],
+                "tags": [
+                    "E-Archive"
+                ],
+                "summary": "E-Arşiv Faturasını İptal Et",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": true
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/earchive/invoices/{uuid}/{fileType}": {
+            "get": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
+                "tags": [
+                    "E-Archive"
+                ],
+                "summary": "E-Arşiv Dosyası İndir",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Fatura UUID",
+                        "name": "uuid",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "Dosya Tipi (xml/pdf/html)",
+                        "name": "fileType",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "binary"
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/earchive/send-draft": {
+            "post": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "E-Archive"
+                ],
+                "summary": "Taslak E-Arşiv Faturalarını Gönder",
+                "parameters": [
+                    {
+                        "description": "Fatura UUID Listesi",
+                        "name": "uuids",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": true
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/earchive/upload": {
+            "post": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
+                "consumes": [
+                    "multipart/form-data"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "E-Archive"
+                ],
+                "summary": "Yeni E-Arşiv Faturası Yükle",
+                "parameters": [
+                    {
+                        "type": "file",
+                        "description": "Fatura XML Dosyası",
+                        "name": "File",
+                        "in": "formData",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": true
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/invoices/incoming": {
+            "get": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
+                "description": "NES üzerindeki gelen e-faturaları filtreleyerek listeler.",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Invoices"
+                ],
+                "summary": "Gelen E-Faturaları Listele",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Fatura UUID",
+                        "name": "uuid",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "description": "Fatura Numarası",
+                        "name": "documentNumber",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "description": "Başlangıç Tarihi (ISO8601)",
+                        "name": "startDate",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "description": "Bitiş Tarihi (ISO8601)",
+                        "name": "endDate",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": true
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/invoices/outgoing": {
+            "get": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
+                "description": "NES üzerindeki giden e-faturaları filtreleyerek listeler.",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Invoices"
+                ],
+                "summary": "Giden E-Faturaları Listele",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Fatura UUID",
+                        "name": "uuid",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "description": "Fatura Numarası",
+                        "name": "documentNumber",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": true
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/invoices/send-draft": {
+            "post": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
+                "description": "Taslak olarak yüklenmiş faturaları onaylayıp resmileştirir.",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Invoices"
+                ],
+                "summary": "Taslak Faturaları Gönder",
+                "parameters": [
+                    {
+                        "description": "Fatura UUID Listesi",
+                        "name": "uuids",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {}
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/invoices/upload": {
+            "post": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
+                "description": "NES Özel Entegratör sistemine yeni bir XML fatura yükler.",
+                "consumes": [
+                    "multipart/form-data"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Invoices"
+                ],
+                "summary": "Yeni Fatura Yükle (Taslak)",
+                "parameters": [
+                    {
+                        "type": "file",
+                        "description": "Fatura XML Dosyası",
+                        "name": "File",
+                        "in": "formData",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "Doğrudan Gönder (true/false)",
+                        "name": "IsDirectSend",
+                        "in": "formData"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": true
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/invoices/{direction}/{uuid}/{fileType}": {
+            "get": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
+                "description": "Belirtilen faturanın XML, PDF veya HTML dosyasını indirir.",
+                "tags": [
+                    "Invoices"
+                ],
+                "summary": "Fatura Dosyası İndir",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Fatura UUID",
+                        "name": "uuid",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "Yön (incoming/outgoing)",
+                        "name": "direction",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "Dosya Tipi (xml/pdf/html)",
+                        "name": "fileType",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "binary"
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/management/creditsummary": {
+            "get": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
+                "description": "Mevcut oturumdaki firmanın NES Özel Entegratör üzerindeki kontör özetini döner.",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Management"
+                ],
+                "summary": "NES Kontör Bakiyesini Getir",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": true
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/errors.AppError"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/errors.AppError"
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/management/identifications": {
+            "get": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
+                "description": "Firmanın kimlik bilgilerini (Party Identification) listeler.",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Management"
+                ],
+                "summary": "Kimlik Bilgilerini Listele",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {}
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/errors.AppError"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
+                "description": "Firmaya yeni bir kimlik bilgisi (VKN/TCKN vb.) ekler.",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Management"
+                ],
+                "summary": "Yeni Kimlik Bilgisi Ekle",
+                "responses": {
+                    "201": {
+                        "description": "Created",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/staticcodes/currency": {
+            "get": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
+                "description": "Sistemde kullanılabilir para birimilerine bu uç ile ulaşabilirsiniz. (NES API entegrasyonu)",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "StaticCodes"
+                ],
+                "summary": "Para Birimlerini Listele",
+                "responses": {
+                    "200": {
+                        "description": "Başarılı istek. Para birimlerinin listesi döner.",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/models.Currency"
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Yetkisiz erişim. Oturum açık değil veya firma bilgisi eksik.",
+                        "schema": {
+                            "$ref": "#/definitions/errors.AppError"
+                        }
+                    },
+                    "500": {
+                        "description": "Sunucu hatası veya entegrasyon hatası.",
+                        "schema": {
+                            "$ref": "#/definitions/errors.AppError"
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/staticcodes/taxexemptionreason": {
+            "get": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
+                "description": "Sistemde kullanılabilir vergi muafiyetlerine bu uç ile ulaşabilirsiniz. (NES API entegrasyonu)",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "StaticCodes"
+                ],
+                "summary": "Vergi Muafiyet Kodlarını Listele",
+                "responses": {
+                    "200": {
+                        "description": "Başarılı istek. Vergi muafiyet kodlarının listesi döner.",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/models.TaxExemptionReason"
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Yetkisiz erişim. Oturum açık değil veya firma bilgisi eksik.",
+                        "schema": {
+                            "$ref": "#/definitions/errors.AppError"
+                        }
+                    },
+                    "500": {
+                        "description": "Sunucu hatası veya entegrasyon hatası.",
+                        "schema": {
+                            "$ref": "#/definitions/errors.AppError"
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/staticcodes/taxtype": {
+            "get": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
+                "description": "Sistemde kullanılabilir vergi tiplerine bu uç ile ulaşabilirsiniz. (NES API entegrasyonu)",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "StaticCodes"
+                ],
+                "summary": "Vergi Tiplerini Listele",
+                "responses": {
+                    "200": {
+                        "description": "Başarılı istek. Vergi tiplerinin listesi döner.",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/models.TaxType"
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Yetkisiz erişim. Oturum açık değil veya firma bilgisi eksik.",
+                        "schema": {
+                            "$ref": "#/definitions/errors.AppError"
+                        }
+                    },
+                    "500": {
+                        "description": "Sunucu hatası veya entegrasyon hatası.",
+                        "schema": {
+                            "$ref": "#/definitions/errors.AppError"
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/staticcodes/withholdingtaxtype": {
+            "get": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
+                "description": "Sistemde kullanılabilir tevkifat tiplerine bu uç ile ulaşabilirsiniz. (NES API entegrasyonu)",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "StaticCodes"
+                ],
+                "summary": "Tevkifat Tiplerini Listele",
+                "responses": {
+                    "200": {
+                        "description": "Başarılı istek. Tevkifat tiplerinin listesi döner.",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/models.WithholdingTaxType"
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Yetkisiz erişim. Oturum açık değil veya firma bilgisi eksik.",
+                        "schema": {
+                            "$ref": "#/definitions/errors.AppError"
+                        }
+                    },
+                    "500": {
+                        "description": "Sunucu hatası veya entegrasyon hatası.",
+                        "schema": {
+                            "$ref": "#/definitions/errors.AppError"
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/statistics/daily": {
+            "get": {
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
+                "description": "Günlük kullanım istatistiklerine bu uç ile ulaşabilirsiniz. startDate ve endDate (ISO 8601) query parametreleriyle tarih aralığı verilir. (NES API entegrasyonu)",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Statistics"
+                ],
+                "summary": "Günlük İstatistikleri Listele",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Başlangıç tarihi (Örn: 2025-01-26T00:00:00.0000000+03:00)",
+                        "name": "startDate",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "Bitiş tarihi (Örn: 2025-01-26T00:00:00.0000000+03:00)",
+                        "name": "endDate",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Başarılı istek. İstatistik sonuçları döner.",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/models.DailyStatistic"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Eksik parametre hatası. (startDate veya endDate eksik)",
+                        "schema": {
+                            "$ref": "#/definitions/errors.AppError"
+                        }
+                    },
+                    "401": {
+                        "description": "Yetkisiz erişim. Oturum açık değil veya firma bilgisi eksik.",
+                        "schema": {
+                            "$ref": "#/definitions/errors.AppError"
+                        }
+                    },
+                    "500": {
+                        "description": "Sunucu hatası veya entegrasyon hatası.",
+                        "schema": {
+                            "$ref": "#/definitions/errors.AppError"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "errors.AppError": {
+            "type": "object",
+            "properties": {
+                "code": {
+                    "type": "string"
+                },
+                "message": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.Currency": {
+            "type": "object",
+            "properties": {
+                "code": {
+                    "description": "Para birimi ISO kodu (Örn: TRY, USD, EUR)",
+                    "type": "string"
+                },
+                "description": {
+                    "description": "Para biriminin adı (Örn: Türk Lirası)",
+                    "type": "string"
+                },
+                "detail": {
+                    "description": "Varsa para birimine ait ekstra detaylar",
+                    "type": "string"
+                }
+            }
+        },
+        "models.DailyStatistic": {
+            "type": "object",
+            "properties": {
+                "date": {
+                    "description": "İstatistiğin ait olduğu gün, saat ve zaman dilimi (ISO 8601 formatında)",
+                    "type": "string"
+                },
+                "statistics": {
+                    "description": "İlgili güne ait sistemden dönen istatistik detayları veya sayaçları barındırır"
+                }
+            }
+        },
+        "models.TaxExemptionReason": {
+            "type": "object",
+            "properties": {
+                "code": {
+                    "description": "KDV Muafiyet kodu (Örn: 301, 350)",
+                    "type": "string"
+                },
+                "description": {
+                    "description": "Muafiyetin kısa adı veya kanun maddesi",
+                    "type": "string"
+                },
+                "detail": {
+                    "description": "Muafiyetin daha detaylı açıklaması",
+                    "type": "string"
+                }
+            }
+        },
+        "models.TaxType": {
+            "type": "object",
+            "properties": {
+                "disabledPercent": {
+                    "description": "Yüzdesel vergi oranının devre dışı olup olmadığı",
+                    "type": "boolean"
+                },
+                "disabledTotal": {
+                    "description": "Toplam tutar hesabında devre dışı olup olmadığı",
+                    "type": "boolean"
+                },
+                "isPlus": {
+                    "description": "Verginin toplama pozitif veya negatif etkisi",
+                    "type": "boolean"
+                },
+                "istisnaCheck": {
+                    "description": "Verginin istisna kapsamında olup olmadığının kontrolü",
+                    "type": "boolean"
+                },
+                "matrah": {
+                    "description": "Verginin bir matraha bağlanıp bağlanmadığı bilgisi",
+                    "type": "boolean"
+                },
+                "shortName": {
+                    "description": "Verginin ekranda veya dökümanlarda gösterilecek kısa adı",
+                    "type": "string"
+                },
+                "taxName": {
+                    "description": "Verginin tam adı",
+                    "type": "string"
+                },
+                "taxTypeCode": {
+                    "description": "Verginin sistemdeki benzersiz kodu",
+                    "type": "string"
+                }
+            }
+        },
+        "models.WithholdingTaxType": {
+            "type": "object",
+            "properties": {
+                "disabledPercent": {
+                    "description": "Yüzdesel değerin değiştirilip değiştirilemeyeceği",
+                    "type": "boolean"
+                },
+                "disabledTotal": {
+                    "description": "Toplam değerin değiştirilip değiştirilemeyeceği",
+                    "type": "boolean"
+                },
+                "isPlus": {
+                    "description": "Tevkifatın faturaya olumlu/olumsuz etkisi",
+                    "type": "boolean"
+                },
+                "istisnaCheck": {
+                    "description": "İstisna durumu olup olmadığı",
+                    "type": "boolean"
+                },
+                "matrah": {
+                    "description": "Matrah hesaplamasında kullanılıp kullanılmadığı",
+                    "type": "boolean"
+                },
+                "shortName": {
+                    "description": "Tevkifatın kısa adı",
+                    "type": "string"
+                },
+                "taxName": {
+                    "description": "Tevkifatın tam adı",
+                    "type": "string"
+                },
+                "taxTypeCode": {
+                    "description": "Tevkifat tipi kodu",
+                    "type": "string"
+                }
+            }
+        }
+    },
+    "securityDefinitions": {
+        "BearerAuth": {
+            "type": "apiKey",
+            "name": "Authorization",
+            "in": "header"
+        }
+    }
+}

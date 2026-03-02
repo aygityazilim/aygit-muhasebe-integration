@@ -1,0 +1,778 @@
+basePath: /
+definitions:
+  errors.AppError:
+    properties:
+      code:
+        type: string
+      message:
+        type: string
+    type: object
+  models.Currency:
+    properties:
+      code:
+        description: 'Para birimi ISO kodu (Örn: TRY, USD, EUR)'
+        type: string
+      description:
+        description: 'Para biriminin adı (Örn: Türk Lirası)'
+        type: string
+      detail:
+        description: Varsa para birimine ait ekstra detaylar
+        type: string
+    type: object
+  models.DailyStatistic:
+    properties:
+      date:
+        description: İstatistiğin ait olduğu gün, saat ve zaman dilimi (ISO 8601 formatında)
+        type: string
+      statistics:
+        description: İlgili güne ait sistemden dönen istatistik detayları veya sayaçları
+          barındırır
+    type: object
+  models.TaxExemptionReason:
+    properties:
+      code:
+        description: 'KDV Muafiyet kodu (Örn: 301, 350)'
+        type: string
+      description:
+        description: Muafiyetin kısa adı veya kanun maddesi
+        type: string
+      detail:
+        description: Muafiyetin daha detaylı açıklaması
+        type: string
+    type: object
+  models.TaxType:
+    properties:
+      disabledPercent:
+        description: Yüzdesel vergi oranının devre dışı olup olmadığı
+        type: boolean
+      disabledTotal:
+        description: Toplam tutar hesabında devre dışı olup olmadığı
+        type: boolean
+      isPlus:
+        description: Verginin toplama pozitif veya negatif etkisi
+        type: boolean
+      istisnaCheck:
+        description: Verginin istisna kapsamında olup olmadığının kontrolü
+        type: boolean
+      matrah:
+        description: Verginin bir matraha bağlanıp bağlanmadığı bilgisi
+        type: boolean
+      shortName:
+        description: Verginin ekranda veya dökümanlarda gösterilecek kısa adı
+        type: string
+      taxName:
+        description: Verginin tam adı
+        type: string
+      taxTypeCode:
+        description: Verginin sistemdeki benzersiz kodu
+        type: string
+    type: object
+  models.WithholdingTaxType:
+    properties:
+      disabledPercent:
+        description: Yüzdesel değerin değiştirilip değiştirilemeyeceği
+        type: boolean
+      disabledTotal:
+        description: Toplam değerin değiştirilip değiştirilemeyeceği
+        type: boolean
+      isPlus:
+        description: Tevkifatın faturaya olumlu/olumsuz etkisi
+        type: boolean
+      istisnaCheck:
+        description: İstisna durumu olup olmadığı
+        type: boolean
+      matrah:
+        description: Matrah hesaplamasında kullanılıp kullanılmadığı
+        type: boolean
+      shortName:
+        description: Tevkifatın kısa adı
+        type: string
+      taxName:
+        description: Tevkifatın tam adı
+        type: string
+      taxTypeCode:
+        description: Tevkifat tipi kodu
+        type: string
+    type: object
+host: localhost:3000
+info:
+  contact:
+    email: support@aygit.com
+    name: API Destek
+    url: http://www.aygit.com/destek
+  description: Bu servis, NES Özel Entegratör üzerinden e-fatura, e-arşiv ve ürün
+    yönetim süreçlerini yönetir.
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  termsOfService: http://swagger.io/terms/
+  title: Aygıt Muhasebe Entegrasyonu API
+  version: "1.0"
+paths:
+  /hooks/v1/nes/staticcodes/update:
+    post:
+      consumes:
+      - application/json
+      description: NES veya diğer entegratör sistemlerinden gelen "Statik Kodlar Güncellendi"
+        uyarılarını işler.
+      parameters:
+      - description: Güncelleme Detayları
+        in: body
+        name: payload
+        required: true
+        schema:
+          additionalProperties: true
+          type: object
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      summary: NES Statik Kod Güncelleme Bildirimi
+      tags:
+      - Webhooks
+  /hooks/v1/nes/status:
+    post:
+      consumes:
+      - application/json
+      description: NES Özel Entegratör tarafından gönderilen döküman durum güncellemelerini
+        işler.
+      parameters:
+      - description: Durum Güncelleme Detayları
+        in: body
+        name: payload
+        required: true
+        schema:
+          additionalProperties: true
+          type: object
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      summary: NES Durum Güncellemesi Bildirimi
+      tags:
+      - Webhooks
+  /v1/account/default-document-parameter:
+    get:
+      consumes:
+      - application/json
+      description: Fatura Senaryosu, Gönderim Tipi, Satış Kanalı ayarlarını döner.
+        NES Özel Entegratör API /v1/accountDefaultDocumentParameter ucunu çağırır.
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: 'Başarılı istek. Örnek: {''eInvoiceInvoiceProfile'': ''string'',
+            ''eArchiveSendType'': ''string'', ''eArchiveSalesPlatform'': ''string''}'
+          schema:
+            additionalProperties: true
+            type: object
+        "401":
+          description: Kullanıcı firma bilgisi bulunamadı
+          schema:
+            $ref: '#/definitions/errors.AppError'
+        "403":
+          description: Yetkisiz Erişim | Aşağıdaki Scopelardan birisine sahip olmadığınız
+            durumda dönülür
+          schema:
+            $ref: '#/definitions/errors.AppError'
+        "500":
+          description: Sunucu hatası veya NES servis hatası
+          schema:
+            $ref: '#/definitions/errors.AppError'
+      security:
+      - BearerAuth: []
+      summary: Firmanın Varsayılan Doküman Parametresini döner
+      tags:
+      - Account
+  /v1/account/document-archives:
+    get:
+      consumes:
+      - application/json
+      description: Belge arşivi taleplerinize bu uç ile ulaşabilirsiniz. NES Özel
+        Entegratör API /v1/accountDocumentArchives ucunu çağırır.
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Başarılı istek. Dönen liste içerisinde arşiv talepleri bulunur.
+          schema:
+            items: {}
+            type: array
+        "401":
+          description: Kullanıcı firma bilgisi bulunamadı
+          schema:
+            $ref: '#/definitions/errors.AppError'
+        "403":
+          description: Yetkisiz Erişim | Aşağıdaki Scopelardan birisine sahip olmadığınız
+            durumda dönülür
+          schema:
+            $ref: '#/definitions/errors.AppError'
+        "500":
+          description: Sunucu hatası veya NES servis hatası
+          schema:
+            $ref: '#/definitions/errors.AppError'
+      security:
+      - BearerAuth: []
+      summary: Belge arşivi talebi listeler
+      tags:
+      - Account
+  /v1/despatches/{uuid}/answer:
+    post:
+      parameters:
+      - description: İrsaliye UUID
+        in: path
+        name: uuid
+        required: true
+        type: string
+      - description: Yanıt Detayları
+        in: body
+        name: answer
+        required: true
+        schema:
+          additionalProperties: true
+          type: object
+      responses:
+        "200":
+          description: OK
+          schema:
+            additionalProperties: true
+            type: object
+      security:
+      - BearerAuth: []
+      summary: İrsaliye Yanıtı Gönder
+      tags:
+      - Despatches
+  /v1/despatches/incoming:
+    get:
+      responses:
+        "200":
+          description: OK
+          schema:
+            additionalProperties: true
+            type: object
+      security:
+      - BearerAuth: []
+      summary: Gelen E-İrsaliyeleri Listele
+      tags:
+      - Despatches
+  /v1/despatches/outgoing:
+    get:
+      responses:
+        "200":
+          description: OK
+          schema:
+            additionalProperties: true
+            type: object
+      security:
+      - BearerAuth: []
+      summary: Giden E-İrsaliyeleri Listele
+      tags:
+      - Despatches
+  /v1/despatches/upload:
+    post:
+      consumes:
+      - multipart/form-data
+      parameters:
+      - description: İrsaliye XML Dosyası
+        in: formData
+        name: File
+        required: true
+        type: file
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            additionalProperties: true
+            type: object
+      security:
+      - BearerAuth: []
+      summary: Yeni İrsaliye Yükle (Taslak)
+      tags:
+      - Despatches
+  /v1/earchive/invoices:
+    get:
+      responses:
+        "200":
+          description: OK
+          schema:
+            additionalProperties: true
+            type: object
+      security:
+      - BearerAuth: []
+      summary: E-Arşiv Faturalarını Listele
+      tags:
+      - E-Archive
+  /v1/earchive/invoices/{uuid}/{fileType}:
+    get:
+      parameters:
+      - description: Fatura UUID
+        in: path
+        name: uuid
+        required: true
+        type: string
+      - description: Dosya Tipi (xml/pdf/html)
+        in: path
+        name: fileType
+        required: true
+        type: string
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: binary
+      security:
+      - BearerAuth: []
+      summary: E-Arşiv Dosyası İndir
+      tags:
+      - E-Archive
+  /v1/earchive/invoices/cancel:
+    post:
+      consumes:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            additionalProperties: true
+            type: object
+      security:
+      - BearerAuth: []
+      summary: E-Arşiv Faturasını İptal Et
+      tags:
+      - E-Archive
+  /v1/earchive/send-draft:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: Fatura UUID Listesi
+        in: body
+        name: uuids
+        required: true
+        schema:
+          items:
+            type: string
+          type: array
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            additionalProperties: true
+            type: object
+      security:
+      - BearerAuth: []
+      summary: Taslak E-Arşiv Faturalarını Gönder
+      tags:
+      - E-Archive
+  /v1/earchive/upload:
+    post:
+      consumes:
+      - multipart/form-data
+      parameters:
+      - description: Fatura XML Dosyası
+        in: formData
+        name: File
+        required: true
+        type: file
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            additionalProperties: true
+            type: object
+      security:
+      - BearerAuth: []
+      summary: Yeni E-Arşiv Faturası Yükle
+      tags:
+      - E-Archive
+  /v1/invoices/{direction}/{uuid}/{fileType}:
+    get:
+      description: Belirtilen faturanın XML, PDF veya HTML dosyasını indirir.
+      parameters:
+      - description: Fatura UUID
+        in: path
+        name: uuid
+        required: true
+        type: string
+      - description: Yön (incoming/outgoing)
+        in: path
+        name: direction
+        required: true
+        type: string
+      - description: Dosya Tipi (xml/pdf/html)
+        in: path
+        name: fileType
+        required: true
+        type: string
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: binary
+      security:
+      - BearerAuth: []
+      summary: Fatura Dosyası İndir
+      tags:
+      - Invoices
+  /v1/invoices/incoming:
+    get:
+      consumes:
+      - application/json
+      description: NES üzerindeki gelen e-faturaları filtreleyerek listeler.
+      parameters:
+      - description: Fatura UUID
+        in: query
+        name: uuid
+        type: string
+      - description: Fatura Numarası
+        in: query
+        name: documentNumber
+        type: string
+      - description: Başlangıç Tarihi (ISO8601)
+        in: query
+        name: startDate
+        type: string
+      - description: Bitiş Tarihi (ISO8601)
+        in: query
+        name: endDate
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            additionalProperties: true
+            type: object
+      security:
+      - BearerAuth: []
+      summary: Gelen E-Faturaları Listele
+      tags:
+      - Invoices
+  /v1/invoices/outgoing:
+    get:
+      consumes:
+      - application/json
+      description: NES üzerindeki giden e-faturaları filtreleyerek listeler.
+      parameters:
+      - description: Fatura UUID
+        in: query
+        name: uuid
+        type: string
+      - description: Fatura Numarası
+        in: query
+        name: documentNumber
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            additionalProperties: true
+            type: object
+      security:
+      - BearerAuth: []
+      summary: Giden E-Faturaları Listele
+      tags:
+      - Invoices
+  /v1/invoices/send-draft:
+    post:
+      consumes:
+      - application/json
+      description: Taslak olarak yüklenmiş faturaları onaylayıp resmileştirir.
+      parameters:
+      - description: Fatura UUID Listesi
+        in: body
+        name: uuids
+        required: true
+        schema:
+          items:
+            type: string
+          type: array
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items: {}
+            type: array
+      security:
+      - BearerAuth: []
+      summary: Taslak Faturaları Gönder
+      tags:
+      - Invoices
+  /v1/invoices/upload:
+    post:
+      consumes:
+      - multipart/form-data
+      description: NES Özel Entegratör sistemine yeni bir XML fatura yükler.
+      parameters:
+      - description: Fatura XML Dosyası
+        in: formData
+        name: File
+        required: true
+        type: file
+      - description: Doğrudan Gönder (true/false)
+        in: formData
+        name: IsDirectSend
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            additionalProperties: true
+            type: object
+      security:
+      - BearerAuth: []
+      summary: Yeni Fatura Yükle (Taslak)
+      tags:
+      - Invoices
+  /v1/management/creditsummary:
+    get:
+      consumes:
+      - application/json
+      description: Mevcut oturumdaki firmanın NES Özel Entegratör üzerindeki kontör
+        özetini döner.
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            additionalProperties: true
+            type: object
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/errors.AppError'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/errors.AppError'
+      security:
+      - BearerAuth: []
+      summary: NES Kontör Bakiyesini Getir
+      tags:
+      - Management
+  /v1/management/identifications:
+    get:
+      consumes:
+      - application/json
+      description: Firmanın kimlik bilgilerini (Party Identification) listeler.
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items: {}
+            type: array
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/errors.AppError'
+      security:
+      - BearerAuth: []
+      summary: Kimlik Bilgilerini Listele
+      tags:
+      - Management
+    post:
+      consumes:
+      - application/json
+      description: Firmaya yeni bir kimlik bilgisi (VKN/TCKN vb.) ekler.
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      security:
+      - BearerAuth: []
+      summary: Yeni Kimlik Bilgisi Ekle
+      tags:
+      - Management
+  /v1/staticcodes/currency:
+    get:
+      consumes:
+      - application/json
+      description: Sistemde kullanılabilir para birimilerine bu uç ile ulaşabilirsiniz.
+        (NES API entegrasyonu)
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Başarılı istek. Para birimlerinin listesi döner.
+          schema:
+            items:
+              $ref: '#/definitions/models.Currency'
+            type: array
+        "401":
+          description: Yetkisiz erişim. Oturum açık değil veya firma bilgisi eksik.
+          schema:
+            $ref: '#/definitions/errors.AppError'
+        "500":
+          description: Sunucu hatası veya entegrasyon hatası.
+          schema:
+            $ref: '#/definitions/errors.AppError'
+      security:
+      - BearerAuth: []
+      summary: Para Birimlerini Listele
+      tags:
+      - StaticCodes
+  /v1/staticcodes/taxexemptionreason:
+    get:
+      consumes:
+      - application/json
+      description: Sistemde kullanılabilir vergi muafiyetlerine bu uç ile ulaşabilirsiniz.
+        (NES API entegrasyonu)
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Başarılı istek. Vergi muafiyet kodlarının listesi döner.
+          schema:
+            items:
+              $ref: '#/definitions/models.TaxExemptionReason'
+            type: array
+        "401":
+          description: Yetkisiz erişim. Oturum açık değil veya firma bilgisi eksik.
+          schema:
+            $ref: '#/definitions/errors.AppError'
+        "500":
+          description: Sunucu hatası veya entegrasyon hatası.
+          schema:
+            $ref: '#/definitions/errors.AppError'
+      security:
+      - BearerAuth: []
+      summary: Vergi Muafiyet Kodlarını Listele
+      tags:
+      - StaticCodes
+  /v1/staticcodes/taxtype:
+    get:
+      consumes:
+      - application/json
+      description: Sistemde kullanılabilir vergi tiplerine bu uç ile ulaşabilirsiniz.
+        (NES API entegrasyonu)
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Başarılı istek. Vergi tiplerinin listesi döner.
+          schema:
+            items:
+              $ref: '#/definitions/models.TaxType'
+            type: array
+        "401":
+          description: Yetkisiz erişim. Oturum açık değil veya firma bilgisi eksik.
+          schema:
+            $ref: '#/definitions/errors.AppError'
+        "500":
+          description: Sunucu hatası veya entegrasyon hatası.
+          schema:
+            $ref: '#/definitions/errors.AppError'
+      security:
+      - BearerAuth: []
+      summary: Vergi Tiplerini Listele
+      tags:
+      - StaticCodes
+  /v1/staticcodes/withholdingtaxtype:
+    get:
+      consumes:
+      - application/json
+      description: Sistemde kullanılabilir tevkifat tiplerine bu uç ile ulaşabilirsiniz.
+        (NES API entegrasyonu)
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Başarılı istek. Tevkifat tiplerinin listesi döner.
+          schema:
+            items:
+              $ref: '#/definitions/models.WithholdingTaxType'
+            type: array
+        "401":
+          description: Yetkisiz erişim. Oturum açık değil veya firma bilgisi eksik.
+          schema:
+            $ref: '#/definitions/errors.AppError'
+        "500":
+          description: Sunucu hatası veya entegrasyon hatası.
+          schema:
+            $ref: '#/definitions/errors.AppError'
+      security:
+      - BearerAuth: []
+      summary: Tevkifat Tiplerini Listele
+      tags:
+      - StaticCodes
+  /v1/statistics/daily:
+    get:
+      consumes:
+      - application/json
+      description: Günlük kullanım istatistiklerine bu uç ile ulaşabilirsiniz. startDate
+        ve endDate (ISO 8601) query parametreleriyle tarih aralığı verilir. (NES API
+        entegrasyonu)
+      parameters:
+      - description: 'Başlangıç tarihi (Örn: 2025-01-26T00:00:00.0000000+03:00)'
+        in: query
+        name: startDate
+        required: true
+        type: string
+      - description: 'Bitiş tarihi (Örn: 2025-01-26T00:00:00.0000000+03:00)'
+        in: query
+        name: endDate
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Başarılı istek. İstatistik sonuçları döner.
+          schema:
+            items:
+              $ref: '#/definitions/models.DailyStatistic'
+            type: array
+        "400":
+          description: Eksik parametre hatası. (startDate veya endDate eksik)
+          schema:
+            $ref: '#/definitions/errors.AppError'
+        "401":
+          description: Yetkisiz erişim. Oturum açık değil veya firma bilgisi eksik.
+          schema:
+            $ref: '#/definitions/errors.AppError'
+        "500":
+          description: Sunucu hatası veya entegrasyon hatası.
+          schema:
+            $ref: '#/definitions/errors.AppError'
+      security:
+      - BearerAuth: []
+      summary: Günlük İstatistikleri Listele
+      tags:
+      - Statistics
+securityDefinitions:
+  BearerAuth:
+    in: header
+    name: Authorization
+    type: apiKey
+swagger: "2.0"
