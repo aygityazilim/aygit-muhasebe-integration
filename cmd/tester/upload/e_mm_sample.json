@@ -1,0 +1,35 @@
+{
+	"uuid": "%s",
+	"documentDate": "%s",
+	"documentTime": "12:00:00",
+	"currency": "TRY",
+	"receiver": {
+		"vknTckn": "11111111111",
+		"name": "Aygıt Bilişim EMM Test Şahsı",
+		"surname": "Test",
+		"address": "İstanbul",
+		"taxOffice": "KADIKÖY",
+		"city": "İstanbul",
+		"country": "Türkiye"
+	},
+	"lines": [
+		{
+			"name": "Müstahsil Alımı",
+			"quantity": 1.0,
+			"unitCode": "C62",
+			"unitPrice": 100.0,
+			"total": 100.0,
+			"taxes": [
+				{
+					"code": "0003",
+					"percent": 2.0,
+					"value": 2.0
+				}
+			]
+		}
+	],
+	"total": 100.0,
+	"tax": 2.0,
+	"payableAmount": 98.0,
+	"notes": ["Aygıt Bilişim Test E-MM Makbuzudur."]
+}

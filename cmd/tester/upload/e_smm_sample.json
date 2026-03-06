@@ -1,0 +1,43 @@
+{
+	"uuid": "%s",
+	"documentDate": "%s",
+	"documentTime": "12:00:00",
+	"currency": "TRY",
+	"receiver": {
+		"vknTckn": "11111111111",
+		"name": "Aygıt Bilişim ESMM Test Şahsı",
+		"surname": "Test",
+		"address": "İstanbul",
+		"taxOffice": "KADIKÖY",
+		"city": "İstanbul",
+		"country": "Türkiye"
+	},
+	"lines": [
+		{
+			"name": "Danışmanlık Hizmeti",
+			"quantity": 1.0,
+			"unitCode": "DAY",
+			"unitPrice": 100.0,
+			"total": 100.0,
+			"taxes": [
+				{
+					"code": "0015",
+					"percent": 18.0,
+					"value": 18.0
+				},
+				{
+					"code": "0003",
+					"percent": 20.0,
+					"value": 20.0
+				}
+			]
+		}
+	],
+	"total": 100.0,
+	"tax": 18.0,
+	"withholdingTax": 20.0,
+	"payableAmount": 98.0,
+	"notes": [
+		"Aygıt Bilişim Test E-SMM Makbuzudur."
+	]
+}

@@ -1,0 +1,91 @@
+<DespatchAdvice xmlns="urn:oasis:names:specification:ubl:schema:xsd:DespatchAdvice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:xades="http://uri.etsi.org/01903/v1.3.2#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:specification:ubl:schema:xsd:DespatchAdvice-2 UBL-DespatchAdvice-2.1.xsd">
+	<cbc:UBLVersionID>2.1</cbc:UBLVersionID>
+	<cbc:CustomizationID>TR1.2</cbc:CustomizationID>
+	<cbc:ProfileID>TEMELIRSALIYE</cbc:ProfileID>
+	<cbc:ID>NES2021000000001</cbc:ID>
+	<cbc:CopyIndicator>false</cbc:CopyIndicator>
+	<cbc:UUID>93467f81-9b62-4211-a8b8-c30d9520a0b2</cbc:UUID>
+	<cbc:IssueDate>2021-04-09</cbc:IssueDate>
+	<cbc:IssueTime>12:00:00</cbc:IssueTime>
+	<cbc:DespatchAdviceTypeCode>SEVK</cbc:DespatchAdviceTypeCode>
+	<cbc:Note>Aygıt Bilişim Test İrsaliyesidir.</cbc:Note>
+	<cbc:LineCountNumeric>1</cbc:LineCountNumeric>
+	<cac:DespatchSupplierParty>
+		<cac:Party>
+			<cbc:WebsiteURI>www.test.com.tr</cbc:WebsiteURI>
+			<cac:PartyIdentification>
+				<cbc:ID schemeID="VKN">1234567801</cbc:ID>
+			</cac:PartyIdentification>
+			<cac:PartyName>
+				<cbc:Name>Aygıt Bilişim Test Firması</cbc:Name>
+			</cac:PartyName>
+			<cac:PostalAddress>
+				<cbc:StreetName>Test Mah. Test Cad. Test Sok. No:1-10</cbc:StreetName>
+				<cbc:CitySubdivisionName>KADIKÖY</cbc:CitySubdivisionName>
+				<cbc:CityName>İSTANBUL</cbc:CityName>
+				<cbc:PostalZone>1</cbc:PostalZone>
+				<cac:Country>
+					<cbc:Name>TÜRKİYE</cbc:Name>
+				</cac:Country>
+			</cac:PostalAddress>
+			<cac:PartyTaxScheme>
+				<cac:TaxScheme>
+					<cbc:Name>KADIKÖY</cbc:Name>
+				</cac:TaxScheme>
+			</cac:PartyTaxScheme>
+			<cac:Contact>
+				<cbc:Telephone>2122222222</cbc:Telephone>
+				<cbc:Telefax>2122222222</cbc:Telefax>
+				<cbc:ElectronicMail>test@test.com</cbc:ElectronicMail>
+			</cac:Contact>
+		</cac:Party>
+	</cac:DespatchSupplierParty>
+	<cac:DeliveryCustomerParty>
+		<cac:Party>
+			<cac:PartyIdentification>
+				<cbc:ID schemeID="VKN">1234567802</cbc:ID>
+			</cac:PartyIdentification>
+			<cac:PartyName>
+				<cbc:Name>Aygıt Müşteri Firması</cbc:Name>
+			</cac:PartyName>
+			<cac:PostalAddress>
+				<cbc:StreetName>Barbaros Mah.</cbc:StreetName>
+				<cbc:CitySubdivisionName>Ataşehir</cbc:CitySubdivisionName>
+				<cbc:CityName>İstanbul</cbc:CityName>
+				<cac:Country>
+					<cbc:Name>Türkiye</cbc:Name>
+				</cac:Country>
+			</cac:PostalAddress>
+			<cac:PartyTaxScheme>
+				<cac:TaxScheme>
+					<cbc:Name>KOZYATAĞI</cbc:Name>
+				</cac:TaxScheme>
+			</cac:PartyTaxScheme>
+			<cac:Contact/>
+		</cac:Party>
+	</cac:DeliveryCustomerParty>
+	<cac:Shipment>
+		<cbc:ID>1</cbc:ID>
+		<cac:Delivery>
+			<cac:CarrierParty>
+				<cac:PartyIdentification>
+					<cbc:ID schemeID="VKN">1234567801</cbc:ID>
+				</cac:PartyIdentification>
+				<cac:PartyName>
+					<cbc:Name>Aygıt Bilişim Lojistik</cbc:Name>
+				</cac:PartyName>
+			</cac:CarrierParty>
+			<cac:Despatch>
+				<cbc:ActualDespatchDate>2021-04-09</cbc:ActualDespatchDate>
+				<cbc:ActualDespatchTime>12:00:00</cbc:ActualDespatchTime>
+			</cac:Despatch>
+		</cac:Delivery>
+	</cac:Shipment>
+	<cac:DespatchLine>
+		<cbc:ID>1</cbc:ID>
+		<cbc:DeliveredQuantity unitCode="C62">10</cbc:DeliveredQuantity>
+		<cac:Item>
+			<cbc:Name>Aygt Test İrsaliye Kalemi</cbc:Name>
+		</cac:Item>
+	</cac:DespatchLine>
+</DespatchAdvice>

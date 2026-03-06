@@ -1,0 +1,3359 @@
+{
+    "general": [
+        {
+            "path": "/v1/accountDefaultDocumentParameter",
+            "method": "GET",
+            "summary": "Firman\u0131n Varsay\u0131lan Dok\u00fcman Parametresini d\u00f6ner"
+        },
+        {
+            "path": "/v1/accountDefaultDocumentParameter",
+            "method": "PUT",
+            "summary": "Firman\u0131n Varsay\u0131lan Dok\u00fcman Parametresini g\u00fcnceller"
+        },
+        {
+            "path": "/v1/documentarchives",
+            "method": "GET",
+            "summary": "Belge ar\u015fivi talebi listeler"
+        },
+        {
+            "path": "/v1/documentarchives",
+            "method": "POST",
+            "summary": "Belge ar\u015fivi talebi olu\u015fturur"
+        },
+        {
+            "path": "/v1/management/creditsummary",
+            "method": "GET",
+            "summary": "Firman\u0131n kont\u00f6r tan\u0131mlama/kullan\u0131m \u00f6zeti bu alanda d\u00f6n\u00fcl\u00fcr."
+        },
+        {
+            "path": "/v1/management/identifications",
+            "method": "GET",
+            "summary": "Kimlik bilgilerini listeler"
+        },
+        {
+            "path": "/v1/management/identifications",
+            "method": "POST",
+            "summary": "Kimlik bilgileri ekler"
+        },
+        {
+            "path": "/v1/management/dealerinfo",
+            "method": "GET",
+            "summary": "Bayi bilgilerine ula\u015fabilirsiniz"
+        },
+        {
+            "path": "/v1/management/identifications/{id}",
+            "method": "DELETE",
+            "summary": ""
+        },
+        {
+            "path": "/v1/management/addresses",
+            "method": "GET",
+            "summary": ""
+        },
+        {
+            "path": "/v1/management/addresses",
+            "method": "POST",
+            "summary": "Adres bilgileri ekler"
+        },
+        {
+            "path": "/v1/management/address/{id}",
+            "method": "PUT",
+            "summary": ""
+        },
+        {
+            "path": "/v1/management/address/{id}",
+            "method": "DELETE",
+            "summary": ""
+        },
+        {
+            "path": "/v1/management/ivd",
+            "method": "GET",
+            "summary": ""
+        },
+        {
+            "path": "/v1/management/ivd",
+            "method": "PUT",
+            "summary": ""
+        },
+        {
+            "path": "/v1/management/luca/integration/setting",
+            "method": "GET",
+            "summary": ""
+        },
+        {
+            "path": "/v1/management/luca/integration/setting",
+            "method": "PUT",
+            "summary": ""
+        },
+        {
+            "path": "/v1/management/customer_search_from_gib/setting",
+            "method": "GET",
+            "summary": ""
+        },
+        {
+            "path": "/v1/management/customer_search_from_gib/setting",
+            "method": "PUT",
+            "summary": ""
+        },
+        {
+            "path": "/v1/accountmodules/info",
+            "method": "POST",
+            "summary": "Hesap bilgilerini ve i\u015flem bekleyen zarflar\u0131 d\u00f6ner"
+        },
+        {
+            "path": "/v1/accountmodules/update",
+            "method": "POST",
+            "summary": "Hesap bilgilerini g\u00fcnceller"
+        },
+        {
+            "path": "/v1/accountmodules/getenvelopecontent",
+            "method": "POST",
+            "summary": "Zarf\u0131 imzalar"
+        },
+        {
+            "path": "/v1/accountmodules/setsignedcontent",
+            "method": "POST",
+            "summary": "Zarf\u0131 imzalar"
+        },
+        {
+            "path": "/v1/accountmodules/getenvelopeinfo",
+            "method": "POST",
+            "summary": "Zarf\u0131n detaylar\u0131n\u0131 getirir."
+        },
+        {
+            "path": "/v1/productservices",
+            "method": "GET",
+            "summary": ""
+        },
+        {
+            "path": "/v1/productservices",
+            "method": "POST",
+            "summary": ""
+        },
+        {
+            "path": "/v1/productservices/{id}",
+            "method": "PUT",
+            "summary": ""
+        },
+        {
+            "path": "/v1/productservices/{id}",
+            "method": "DELETE",
+            "summary": ""
+        },
+        {
+            "path": "/v1/productservices/bulk/{operation}",
+            "method": "PUT",
+            "summary": ""
+        },
+        {
+            "path": "/v1/productservices/import",
+            "method": "POST",
+            "summary": ""
+        },
+        {
+            "path": "/v1/einvoice/aliases/{aliasType}",
+            "method": "GET",
+            "summary": "Hesap etiketlerini getir"
+        },
+        {
+            "path": "/v1/edespatch/aliases/{aliasType}",
+            "method": "GET",
+            "summary": "Hesap etiketlerini getir"
+        },
+        {
+            "path": "/v1/announcements/last",
+            "method": "GET",
+            "summary": ""
+        },
+        {
+            "path": "/v1/announcements/{announcementId}/setreaded",
+            "method": "POST",
+            "summary": ""
+        },
+        {
+            "path": "/v1/announcements/feedback",
+            "method": "POST",
+            "summary": ""
+        },
+        {
+            "path": "/v1/announcements/{id}/coverimage",
+            "method": "GET",
+            "summary": ""
+        },
+        {
+            "path": "/v1/announcements/{id}/attachment/{attachmentId}",
+            "method": "GET",
+            "summary": ""
+        },
+        {
+            "path": "/v1/connector/remoteaccess/setup/{operationSystem}",
+            "method": "GET",
+            "summary": ""
+        },
+        {
+            "path": "/v1/connector/remoteaccess/latest/{operationSystem}",
+            "method": "GET",
+            "summary": ""
+        },
+        {
+            "path": "/v1/connector/remoteaccess",
+            "method": "GET",
+            "summary": ""
+        },
+        {
+            "path": "/v1/connector/remoteaccess",
+            "method": "POST",
+            "summary": ""
+        },
+        {
+            "path": "/v1/connector/remoteaccess/{id}/checkconnection",
+            "method": "GET",
+            "summary": ""
+        },
+        {
+            "path": "/v1/connector/remoteaccess/{id}/invoices",
+            "method": "GET",
+            "summary": ""
+        },
+        {
+            "path": "/v1/connector/remoteaccess/{id}/invoices",
+            "method": "POST",
+            "summary": ""
+        },
+        {
+            "path": "/v1/connector/remoteaccess/{id}/invoices/generate-invoice-by-source-document-ref-id",
+            "method": "POST",
+            "summary": ""
+        },
+        {
+            "path": "/v1/connector/remoteaccess/{id}/despatches",
+            "method": "GET",
+            "summary": ""
+        },
+        {
+            "path": "/v1/connector/remoteaccess/{id}/despatches",
+            "method": "POST",
+            "summary": ""
+        },
+        {
+            "path": "/v1/connector/remoteaccess/{id}/despatches/generate-despatch-by-source-document-ref-id",
+            "method": "POST",
+            "summary": ""
+        },
+        {
+            "path": "/v1/connector/remoteaccess/{id}/esmm/vouchers",
+            "method": "GET",
+            "summary": ""
+        },
+        {
+            "path": "/v1/connector/remoteaccess/{id}/esmm/vouchers",
+            "method": "POST",
+            "summary": ""
+        },
+        {
+            "path": "/v1/connector/remoteaccess/{id}",
+            "method": "PUT",
+            "summary": ""
+        },
+        {
+            "path": "/v1/connector/remoteaccess/{id}",
+            "method": "DELETE",
+            "summary": ""
+        },
+        {
+            "path": "/v1/connector/remoteaccess/{id}/queries",
+            "method": "GET",
+            "summary": ""
+        },
+        {
+            "path": "/v1/connector/remoteaccess/{id}/queries",
+            "method": "PUT",
+            "summary": ""
+        },
+        {
+            "path": "/v1/connector/remoteaccess/erpinformations",
+            "method": "GET",
+            "summary": ""
+        },
+        {
+            "path": "/v1/earchivedocumentsreport/{year}/{month}",
+            "method": "GET",
+            "summary": "Raporlar\u0131 listeler"
+        },
+        {
+            "path": "/v1/earchivedocumentsreport/{id}/histories",
+            "method": "GET",
+            "summary": "Rapor par\u00e7as\u0131 ge\u00e7mi\u015fini listeler"
+        },
+        {
+            "path": "/v1/earchivedocumentsreport/{id}/details",
+            "method": "GET",
+            "summary": "Rapor par\u00e7as\u0131n\u0131n i\u00e7eri\u011fini listeler"
+        },
+        {
+            "path": "/v1/earchivedocumentsreport/unreported",
+            "method": "GET",
+            "summary": "Hen\u00fcz raporlanmam\u0131\u015f e-ar\u015fiv belgeleri listeler"
+        },
+        {
+            "path": "/v1/earchivedocumentsreport/unreported",
+            "method": "POST",
+            "summary": "Hen\u00fcz raporlanmam\u0131\u015f e-ar\u015fiv belgelerin raporlanmas\u0131n\u0131 tetiklemek i\u00e7in bu u\u00e7 kullan\u0131labilir"
+        },
+        {
+            "path": "/v1/earchivedocumentsreport/{id}/xml",
+            "method": "GET",
+            "summary": "Rapor par\u00e7as\u0131n\u0131n xml dosyas\u0131n\u0131 indirir"
+        },
+        {
+            "path": "/v1/earchivedocumentsreport/{id}/excel",
+            "method": "GET",
+            "summary": "Rapor par\u00e7as\u0131n\u0131n i\u00e7eri\u011fini excel olarak d\u0131\u015far\u0131 aktar\u0131r"
+        },
+        {
+            "path": "/v1/earchiveincomingdocuments",
+            "method": "GET",
+            "summary": "Interaktif vergi dairesine veya GIB E-Ar\u015fiv portale d\u00fc\u015fm\u00fc\u015f olan E-Ar\u015fiv gelen belgeleri listeler"
+        },
+        {
+            "path": "/v1/companies",
+            "method": "GET",
+            "summary": "Firma listeler"
+        },
+        {
+            "path": "/v1/companies",
+            "method": "POST",
+            "summary": "Firma olu\u015fturur"
+        },
+        {
+            "path": "/v1/companies/{id}",
+            "method": "GET",
+            "summary": "Sorgulanan firmay\u0131 getirir"
+        },
+        {
+            "path": "/v1/companies/{id}",
+            "method": "PUT",
+            "summary": "Firma bilgilerini g\u00fcnceller"
+        },
+        {
+            "path": "/v1/companies/{id}",
+            "method": "DELETE",
+            "summary": "Firma siler"
+        },
+        {
+            "path": "/v1/companies/{id}/addresses",
+            "method": "GET",
+            "summary": "Firma adreslerini listeler"
+        },
+        {
+            "path": "/v1/companies/{id}/addresses",
+            "method": "POST",
+            "summary": "Firma adresi olu\u015fturur"
+        },
+        {
+            "path": "/v1/companies/{id}/addresses/{addressId}/setdefault",
+            "method": "GET",
+            "summary": "Adresi varsay\u0131lan ayarlar"
+        },
+        {
+            "path": "/v1/companies/{id}/addresses/{addressId}",
+            "method": "PUT",
+            "summary": "Firma adresini g\u00fcnceller"
+        },
+        {
+            "path": "/v1/companies/{id}/addresses/{addressId}",
+            "method": "DELETE",
+            "summary": "Firma adresini siler"
+        },
+        {
+            "path": "/v1/companies/import",
+            "method": "POST",
+            "summary": ""
+        },
+        {
+            "path": "/v1/usage",
+            "method": "GET",
+            "summary": "Kulland\u0131\u011f\u0131n kadar \u00f6de detaylar\u0131n\u0131 getirir"
+        },
+        {
+            "path": "/v1/marketplaces/{id}/orders",
+            "method": "GET",
+            "summary": "Belirtilen pazaryerindeki sipari\u015fleri listeler"
+        },
+        {
+            "path": "/v1/marketplaces/platforms",
+            "method": "GET",
+            "summary": "Pazaryeri entegrasyon listesine bu u\u00e7 ile eri\u015febilirsiniz"
+        },
+        {
+            "path": "/v1/marketplaces/settings",
+            "method": "GET",
+            "summary": "Pazaryeri entegrasyon bilgilerine bu u\u00e7 ile eri\u015febilirsiniz"
+        },
+        {
+            "path": "/v1/marketplaces/settings",
+            "method": "POST",
+            "summary": "Pazaryeri entegrasyon bilgilerini g\u00fcnceller"
+        },
+        {
+            "path": "/v1/marketplaces/settings/{id}",
+            "method": "PUT",
+            "summary": "Pazaryeri entegrasyon bilgilerini g\u00fcnceller"
+        },
+        {
+            "path": "/v1/marketplaces/settings/{id}",
+            "method": "DELETE",
+            "summary": "Pazaryeri entegrasyonuna ait bilgiyi silmek i\u00e7in bu u\u00e7 kullan\u0131labilir."
+        },
+        {
+            "path": "/v1/staticcodes/taxtype",
+            "method": "GET",
+            "summary": "Vergi tiplerini listeler"
+        },
+        {
+            "path": "/v1/staticcodes/withholdingtaxtype",
+            "method": "GET",
+            "summary": "Tevkifat tiplerini listeler"
+        },
+        {
+            "path": "/v1/staticcodes/taxexemptionreason",
+            "method": "GET",
+            "summary": "Vergi muafiyet kodlar\u0131n\u0131 listeler"
+        },
+        {
+            "path": "/v1/staticcodes/currency",
+            "method": "GET",
+            "summary": "Para birimlerini listeler"
+        },
+        {
+            "path": "/v1/statistics/daily",
+            "method": "GET",
+            "summary": "Belge listeler"
+        },
+        {
+            "path": "/v1/statistics/general",
+            "method": "GET",
+            "summary": "Belge listeler"
+        }
+    ],
+    "einvoice": [
+        {
+            "path": "/v1/definitions/fileexporttitles/{documentType}/titlekeys",
+            "method": "GET",
+            "summary": "Kullan\u0131labilir alanlar\u0131 listeler"
+        },
+        {
+            "path": "/v1/definitions/fileexporttitles/{documentType}/{extension}",
+            "method": "GET",
+            "summary": "Tan\u0131mlar\u0131 getirir"
+        },
+        {
+            "path": "/v1/definitions/fileexporttitles",
+            "method": "PUT",
+            "summary": "Tan\u0131mlar\u0131 g\u00fcnceller"
+        },
+        {
+            "path": "/v1/uploads/document/preview",
+            "method": "POST",
+            "summary": "Belge \u00f6nizleme"
+        },
+        {
+            "path": "/v1/uploads/document",
+            "method": "POST",
+            "summary": "Belge y\u00fckler"
+        },
+        {
+            "path": "/v1/uploads/document/{uuid}",
+            "method": "PUT",
+            "summary": "Belge g\u00fcnceller"
+        },
+        {
+            "path": "/v1/uploads/draft/send",
+            "method": "POST",
+            "summary": "Daha \u00f6nce g\u00f6nderilmi\u015f fakat taslak olan belgeleri, g\u00f6ndermek (resmile\u015ftirmek) i\u00e7in bu u\u00e7 kullan\u0131labilir."
+        },
+        {
+            "path": "/v1/uploads/draft/create/{id}",
+            "method": "POST",
+            "summary": "Belge y\u00fckler"
+        },
+        {
+            "path": "/v1/uploads/marketplaces/{id}/orders/{orderId}/preview",
+            "method": "POST",
+            "summary": "Belirtilen pazaryerindeki sipari\u015fin faturas\u0131n\u0131 \u00f6nizler"
+        },
+        {
+            "path": "/v1/uploads/marketplaces/{id}/orders/createinvoice",
+            "method": "POST",
+            "summary": "Belirtilen pazaryerindeki sipari\u015fin faturas\u0131n\u0131 \u00f6nizler"
+        },
+        {
+            "path": "/v1/exinvoices",
+            "method": "POST",
+            "summary": "Eski belge y\u00fckler"
+        },
+        {
+            "path": "/v1/exinvoices/queue",
+            "method": "GET",
+            "summary": "Y\u00fckleme kuyru\u011funu listeler"
+        },
+        {
+            "path": "/v1/exinvoices/queue/{id}",
+            "method": "GET",
+            "summary": "Y\u00fckleme sonucunu indir"
+        },
+        {
+            "path": "/v1/tags",
+            "method": "GET",
+            "summary": "Etiketleri listeler"
+        },
+        {
+            "path": "/v1/tags",
+            "method": "POST",
+            "summary": "Etiket ekler"
+        },
+        {
+            "path": "/v1/tags/{id}",
+            "method": "GET",
+            "summary": "Sorgulanan etiketi getirir"
+        },
+        {
+            "path": "/v1/tags/{id}",
+            "method": "PUT",
+            "summary": "Etiket g\u00fcnceller"
+        },
+        {
+            "path": "/v1/tags/{id}",
+            "method": "DELETE",
+            "summary": "Etiket siler"
+        },
+        {
+            "path": "/v1/exinvoices/incoming",
+            "method": "GET",
+            "summary": "Belgeleri listeler"
+        },
+        {
+            "path": "/v1/exinvoices/incoming/{uuid}/xml",
+            "method": "GET",
+            "summary": "XML \u0130ndir"
+        },
+        {
+            "path": "/v1/exinvoices/incoming/{uuid}/pdf",
+            "method": "GET",
+            "summary": "PDF \u0130ndir"
+        },
+        {
+            "path": "/v1/exinvoices/incoming/{uuid}/html",
+            "method": "GET",
+            "summary": "Belgeyi g\u00f6r\u00fcnt\u00fcler"
+        },
+        {
+            "path": "/v1/exinvoices/incoming/export/{fileType}",
+            "method": "POST",
+            "summary": "D\u0131\u015far\u0131 Aktar"
+        },
+        {
+            "path": "/v1/notifications/incoming/dynamicrules",
+            "method": "GET",
+            "summary": "Kurallar\u0131 listeler"
+        },
+        {
+            "path": "/v1/notifications/incoming/dynamicrules",
+            "method": "POST",
+            "summary": "Kural olu\u015fturur"
+        },
+        {
+            "path": "/v1/notifications/incoming/dynamicrules/{id}",
+            "method": "GET",
+            "summary": "Sorgulanan kural\u0131 getirir"
+        },
+        {
+            "path": "/v1/notifications/incoming/dynamicrules/{id}",
+            "method": "PUT",
+            "summary": "Kural g\u00fcnceller"
+        },
+        {
+            "path": "/v1/notifications/incoming/dynamicrules/{id}",
+            "method": "DELETE",
+            "summary": "Kural siler"
+        },
+        {
+            "path": "/v1/incoming/invoices/{uuid}/xml",
+            "method": "GET",
+            "summary": "XML \u0130ndir"
+        },
+        {
+            "path": "/v1/incoming/invoices/{uuid}/pdf",
+            "method": "GET",
+            "summary": "PDF \u0130ndir"
+        },
+        {
+            "path": "/v1/incoming/invoices/{uuid}/envelope",
+            "method": "GET",
+            "summary": "Zarf XML \u0130ndir"
+        },
+        {
+            "path": "/v1/incoming/invoices/export/{fileType}",
+            "method": "POST",
+            "summary": "Toplu aktar"
+        },
+        {
+            "path": "/v1/incoming/reportmodule/reports",
+            "method": "GET",
+            "summary": "Rapor listeler"
+        },
+        {
+            "path": "/v1/incoming/reportmodule/reports",
+            "method": "POST",
+            "summary": "Rapor olu\u015fturur"
+        },
+        {
+            "path": "/v1/incoming/reportmodule/reports/{id}/download",
+            "method": "GET",
+            "summary": "Rapor indirir"
+        },
+        {
+            "path": "/v1/incoming/reportmodule/templates",
+            "method": "GET",
+            "summary": "\u015eablonlar\u0131 listeler"
+        },
+        {
+            "path": "/v1/incoming/reportmodule/templates",
+            "method": "POST",
+            "summary": "Rapor \u015fablonu olu\u015fturur"
+        },
+        {
+            "path": "/v1/incoming/reportmodule/templates/{id}",
+            "method": "GET",
+            "summary": "Sorgulanan \u015fablonu getirir"
+        },
+        {
+            "path": "/v1/incoming/reportmodule/templates/{id}",
+            "method": "PUT",
+            "summary": "Rapor \u015fablonunu g\u00fcnceller"
+        },
+        {
+            "path": "/v1/incoming/reportmodule/templates/{id}",
+            "method": "DELETE",
+            "summary": "Rapor \u015eablonunu siler"
+        },
+        {
+            "path": "/v1/incoming/reportmodule/columns",
+            "method": "GET",
+            "summary": "Kolonlar\u0131 listeler"
+        },
+        {
+            "path": "/v1/incoming/invoices/tags",
+            "method": "PUT",
+            "summary": "Etiket ekler/\u00e7\u0131kar\u0131r"
+        },
+        {
+            "path": "/v1/incoming/invoices/{uuid}/savecompanyindocument",
+            "method": "POST",
+            "summary": "Firma olarak kaydet"
+        },
+        {
+            "path": "/v1/incoming/invoices/{uuid}/documentAnswer",
+            "method": "POST",
+            "summary": "Belge'ye cevap verir"
+        },
+        {
+            "path": "/v1/incoming/invoices/bulk/{operation}",
+            "method": "PUT",
+            "summary": "Yeni durum atar"
+        },
+        {
+            "path": "/v1/incoming/invoices/{id}/createreturninvoice",
+            "method": "POST",
+            "summary": "Gelen e-Fatura i\u00e7in iade olu\u015ftur"
+        },
+        {
+            "path": "/v1/incoming/invoices/{uuid}/usernotes",
+            "method": "GET",
+            "summary": "Kullan\u0131c\u0131 notu listeler"
+        },
+        {
+            "path": "/v1/incoming/invoices/{uuid}/usernotes",
+            "method": "POST",
+            "summary": "Kullan\u0131c\u0131 notu ekler"
+        },
+        {
+            "path": "/v1/incoming/invoices/{uuid}/usernotes/{id}",
+            "method": "PUT",
+            "summary": "Kullan\u0131c\u0131 notunu g\u00fcnceller"
+        },
+        {
+            "path": "/v1/incoming/invoices/{uuid}/usernotes/{id}",
+            "method": "DELETE",
+            "summary": "Kullan\u0131c\u0131 notunu siler"
+        },
+        {
+            "path": "/v1/incoming/invoices",
+            "method": "GET",
+            "summary": "Faturalar\u0131 listeler"
+        },
+        {
+            "path": "/v1/incoming/invoices/last",
+            "method": "GET",
+            "summary": "Gelen son 10 faturay\u0131 listeler"
+        },
+        {
+            "path": "/v1/incoming/invoices/{uuid}",
+            "method": "GET",
+            "summary": "Belge detaylar\u0131n\u0131 getirir"
+        },
+        {
+            "path": "/v1/incoming/invoices/{uuid}/despatches",
+            "method": "GET",
+            "summary": "\u0130rsaliye bilgilerini getirir"
+        },
+        {
+            "path": "/v1/incoming/invoices/{uuid}/taxes",
+            "method": "GET",
+            "summary": "Vergi bilgilerini getirir"
+        },
+        {
+            "path": "/v1/incoming/invoices/{uuid}/histories",
+            "method": "GET",
+            "summary": "\u0130\u015flem ge\u00e7mi\u015fini getirir"
+        },
+        {
+            "path": "/v1/incoming/invoices/{uuid}/attachments",
+            "method": "GET",
+            "summary": "Belge eklerini listeler"
+        },
+        {
+            "path": "/v1/incoming/invoices/{uuid}/attachments/{index}",
+            "method": "GET",
+            "summary": "Belge ekini indirir"
+        },
+        {
+            "path": "/v1/incoming/invoices/{uuid}/html",
+            "method": "GET",
+            "summary": "Belgeyi g\u00f6r\u00fcnt\u00fcler"
+        },
+        {
+            "path": "/v1/incoming/invoices/email/send",
+            "method": "POST",
+            "summary": "Belgeyi mail olarak iletir"
+        },
+        {
+            "path": "/v1/exinvoices/outgoing",
+            "method": "GET",
+            "summary": "Belgeleri listeler"
+        },
+        {
+            "path": "/v1/exinvoices/outgoing/{uuid}/xml",
+            "method": "GET",
+            "summary": "XML \u0130ndir"
+        },
+        {
+            "path": "/v1/exinvoices/outgoing/{uuid}/pdf",
+            "method": "GET",
+            "summary": "PDF \u0130ndir"
+        },
+        {
+            "path": "/v1/exinvoices/outgoing/{uuid}/html",
+            "method": "GET",
+            "summary": "Belgeyi g\u00f6r\u00fcnt\u00fcler"
+        },
+        {
+            "path": "/v1/exinvoices/outgoing/export/{fileType}",
+            "method": "POST",
+            "summary": "D\u0131\u015far\u0131 Aktar"
+        },
+        {
+            "path": "/v1/notifications/outgoing/dynamicrules",
+            "method": "GET",
+            "summary": "Kurallar\u0131 listeler"
+        },
+        {
+            "path": "/v1/notifications/outgoing/dynamicrules",
+            "method": "POST",
+            "summary": "Kural olu\u015fturur"
+        },
+        {
+            "path": "/v1/notifications/outgoing/dynamicrules/{id}",
+            "method": "GET",
+            "summary": "Sorgulanan kural\u0131 getirir"
+        },
+        {
+            "path": "/v1/notifications/outgoing/dynamicrules/{id}",
+            "method": "PUT",
+            "summary": "Kural g\u00fcnceller"
+        },
+        {
+            "path": "/v1/notifications/outgoing/dynamicrules/{id}",
+            "method": "DELETE",
+            "summary": "Kural siler"
+        },
+        {
+            "path": "/v1/outgoing/invoices/{uuid}/xml",
+            "method": "GET",
+            "summary": "XML \u0130ndir"
+        },
+        {
+            "path": "/v1/outgoing/invoices/{uuid}/pdf",
+            "method": "GET",
+            "summary": "PDF \u0130ndir"
+        },
+        {
+            "path": "/v1/outgoing/invoices/{uuid}/envelope",
+            "method": "GET",
+            "summary": "Zarf XML \u0130ndir"
+        },
+        {
+            "path": "/v1/outgoing/invoices/export/{fileType}",
+            "method": "POST",
+            "summary": "Toplu aktar"
+        },
+        {
+            "path": "/v1/outgoing/reportmodule/reports",
+            "method": "GET",
+            "summary": "Rapor listeler"
+        },
+        {
+            "path": "/v1/outgoing/reportmodule/reports",
+            "method": "POST",
+            "summary": "Rapor olu\u015fturur"
+        },
+        {
+            "path": "/v1/outgoing/reportmodule/reports/{id}/download",
+            "method": "GET",
+            "summary": "Rapor indirir"
+        },
+        {
+            "path": "/v1/outgoing/reportmodule/templates",
+            "method": "GET",
+            "summary": "\u015eablonlar\u0131 listeler"
+        },
+        {
+            "path": "/v1/outgoing/reportmodule/templates",
+            "method": "POST",
+            "summary": "Rapor \u015fablonu olu\u015fturur"
+        },
+        {
+            "path": "/v1/outgoing/reportmodule/templates/{id}",
+            "method": "GET",
+            "summary": "Sorgulanan \u015fablonu getirir"
+        },
+        {
+            "path": "/v1/outgoing/reportmodule/templates/{id}",
+            "method": "PUT",
+            "summary": "Rapor \u015fablonunu g\u00fcnceller"
+        },
+        {
+            "path": "/v1/outgoing/reportmodule/templates/{id}",
+            "method": "DELETE",
+            "summary": "Rapor \u015eablonunu siler"
+        },
+        {
+            "path": "/v1/outgoing/reportmodule/columns",
+            "method": "GET",
+            "summary": "Kolonlar\u0131 listeler"
+        },
+        {
+            "path": "/v1/outgoing/invoices/tags",
+            "method": "PUT",
+            "summary": "Etiket ekler/\u00e7\u0131kar\u0131r"
+        },
+        {
+            "path": "/v1/outgoing/invoices/{uuid}/receiveralias",
+            "method": "PUT",
+            "summary": "Taslak belgelerin al\u0131c\u0131 etiketi bu u\u00e7 ile g\u00fcncellenebilir"
+        },
+        {
+            "path": "/v1/outgoing/invoices/{uuid}/savecompanyindocument",
+            "method": "POST",
+            "summary": "Firma olarak kaydet"
+        },
+        {
+            "path": "/v1/outgoing/invoices/bulk/{operation}",
+            "method": "PUT",
+            "summary": "Yeni durum atar"
+        },
+        {
+            "path": "/v1/uploads/resend/{uuid}",
+            "method": "POST",
+            "summary": "Hata alm\u0131\u015f bir belgeyi aynen yeniden g\u00f6nderir"
+        },
+        {
+            "path": "/v1/outgoing/invoices/{uuid}/usernotes",
+            "method": "GET",
+            "summary": "Kullan\u0131c\u0131 notu listeler"
+        },
+        {
+            "path": "/v1/outgoing/invoices/{uuid}/usernotes",
+            "method": "POST",
+            "summary": "Kullan\u0131c\u0131 notu ekler"
+        },
+        {
+            "path": "/v1/outgoing/invoices/{uuid}/usernotes/{id}",
+            "method": "PUT",
+            "summary": "Kullan\u0131c\u0131 notunu g\u00fcnceller"
+        },
+        {
+            "path": "/v1/outgoing/invoices/{uuid}/usernotes/{id}",
+            "method": "DELETE",
+            "summary": "Kullan\u0131c\u0131 notunu siler"
+        },
+        {
+            "path": "/v1/outgoing/invoices",
+            "method": "GET",
+            "summary": "Faturalar\u0131 listeler"
+        },
+        {
+            "path": "/v1/outgoing/invoices/last",
+            "method": "GET",
+            "summary": "Giden son 10 faturay\u0131 listeler"
+        },
+        {
+            "path": "/v1/outgoing/invoices/drafts",
+            "method": "GET",
+            "summary": "Taslak faturalar\u0131 listeler"
+        },
+        {
+            "path": "/v1/outgoing/invoices/drafts",
+            "method": "DELETE",
+            "summary": "Taslak belgeleri silmek i\u00e7in bu u\u00e7 kullan\u0131lablir"
+        },
+        {
+            "path": "/v1/outgoing/invoices/{uuid}",
+            "method": "GET",
+            "summary": "Belge detaylar\u0131n\u0131 getirir"
+        },
+        {
+            "path": "/v1/outgoing/invoices/{uuid}/despatches",
+            "method": "GET",
+            "summary": "\u0130rsaliye bilgilerini getirir"
+        },
+        {
+            "path": "/v1/outgoing/invoices/{uuid}/taxes",
+            "method": "GET",
+            "summary": "Vergi bilgilerini getirir"
+        },
+        {
+            "path": "/v1/outgoing/invoices/{uuid}/histories",
+            "method": "GET",
+            "summary": "\u0130\u015flem ge\u00e7mi\u015fini getirir"
+        },
+        {
+            "path": "/v1/outgoing/invoices/{uuid}/infos",
+            "method": "GET",
+            "summary": "Belgenin di\u011fer bilgileri"
+        },
+        {
+            "path": "/v1/outgoing/invoices/{uuid}/mailaddresses",
+            "method": "GET",
+            "summary": "Mail adreslerini getirir"
+        },
+        {
+            "path": "/v1/outgoing/invoices/{uuid}/attachments",
+            "method": "GET",
+            "summary": "Belge eklerini listeler"
+        },
+        {
+            "path": "/v1/outgoing/invoices/{uuid}/attachments/{index}",
+            "method": "GET",
+            "summary": "Belge ekini indirir"
+        },
+        {
+            "path": "/v1/outgoing/invoices/{uuid}/html",
+            "method": "GET",
+            "summary": "Belgeyi g\u00f6r\u00fcnt\u00fcler"
+        },
+        {
+            "path": "/v1/outgoing/invoices/email/send",
+            "method": "POST",
+            "summary": "Belgeyi mail olarak iletir"
+        },
+        {
+            "path": "/v1/users/zip/{aliasType}",
+            "method": "GET",
+            "summary": "M\u00fckellef listesini indirir"
+        },
+        {
+            "path": "/v1/users/{identifier}/{aliasType}",
+            "method": "GET",
+            "summary": "Kimlik No ile sorgular"
+        },
+        {
+            "path": "/v1/users/{aliasType}",
+            "method": "POST",
+            "summary": "Kimlik No ile sorgular"
+        },
+        {
+            "path": "/v1/users/search/{query}/{aliasType}",
+            "method": "GET",
+            "summary": "\u00dcnvan ile sorgular"
+        },
+        {
+            "path": "/v1/definitions/documenttemplates/customizationsettings",
+            "method": "GET",
+            "summary": "Tasar\u0131m ayarlar\u0131 d\u00f6n\u00fcl\u00fcr"
+        },
+        {
+            "path": "/v1/definitions/documenttemplates/customizationsettings",
+            "method": "POST",
+            "summary": "e-Belge \u00f6zelle\u015ftirilebilir tasar\u0131m eklemek i\u00e7in kullan\u0131l\u0131r."
+        },
+        {
+            "path": "/v1/definitions/documenttemplates/customizationsettings/{id}",
+            "method": "GET",
+            "summary": "Sorgulanan ayar\u0131 getirir"
+        },
+        {
+            "path": "/v1/definitions/documenttemplates/customizationsettings/{id}",
+            "method": "PUT",
+            "summary": "e-Belge \u00f6zelle\u015ftirilebilir tasar\u0131m\u0131n\u0131 g\u00fcncellemek i\u00e7in kullan\u0131l\u0131r."
+        },
+        {
+            "path": "/v1/definitions/documenttemplates/customizationsettings/{id}",
+            "method": "DELETE",
+            "summary": "e-Belge \u00f6zelle\u015ftirilebilir tasar\u0131m\u0131n\u0131 silmek i\u00e7in kullan\u0131l\u0131r."
+        },
+        {
+            "path": "/v1/definitions/documenttemplates/customizationsettings/{id}/setdefault",
+            "method": "GET",
+            "summary": ""
+        },
+        {
+            "path": "/v1/definitions/documenttemplates/customizationsettings/{id}/preview",
+            "method": "POST",
+            "summary": "Tasar\u0131m\u0131 \u00f6nizler"
+        },
+        {
+            "path": "/v1/definitions/documenttemplates/customizationsettings/{id}/logo",
+            "method": "GET",
+            "summary": "e-Belge \u00f6zelle\u015ftirilebilir tasar\u0131ma eklenmi\u015f olan logoya bu u\u00e7 ile ula\u015f\u0131labilir."
+        },
+        {
+            "path": "/v1/definitions/documenttemplates/customizationsettings/{id}/logo",
+            "method": "POST",
+            "summary": "e-Belge \u00f6zelle\u015ftirilebilir tasar\u0131ma logo eklemek i\u00e7in bu u\u00e7 kullan\u0131labilir."
+        },
+        {
+            "path": "/v1/definitions/documenttemplates/customizationsettings/{id}/logo",
+            "method": "DELETE",
+            "summary": "e-Belge \u00f6zelle\u015ftirilebilir tasar\u0131ma eklenmi\u015f olan logoyu silmek i\u00e7in bu u\u00e7 kullan\u0131labilir."
+        },
+        {
+            "path": "/v1/definitions/documenttemplates/customizationsettings/{id}/stamp",
+            "method": "GET",
+            "summary": "e-Belge \u00f6zelle\u015ftirilebilir tasar\u0131ma eklenmi\u015f olan ka\u015feye bu u\u00e7 ile ula\u015f\u0131labilir."
+        },
+        {
+            "path": "/v1/definitions/documenttemplates/customizationsettings/{id}/stamp",
+            "method": "POST",
+            "summary": "e-Belge \u00f6zelle\u015ftirilebilir tasar\u0131ma ka\u015fe eklemek i\u00e7in bu u\u00e7 kullan\u0131labilir."
+        },
+        {
+            "path": "/v1/definitions/documenttemplates/customizationsettings/{id}/stamp",
+            "method": "DELETE",
+            "summary": "e-Belge \u00f6zelle\u015ftirilebilir tasar\u0131ma eklenmi\u015f olan ka\u015feyi silmek i\u00e7in bu u\u00e7 kullan\u0131labilir."
+        },
+        {
+            "path": "/v1/definitions/documenttemplates/customizationsettings/{id}/signature",
+            "method": "GET",
+            "summary": "e-Belge \u00f6zelle\u015ftirilebilir tasar\u0131ma eklenmi\u015f olan imzaya bu u\u00e7 ile ula\u015f\u0131labilir."
+        },
+        {
+            "path": "/v1/definitions/documenttemplates/customizationsettings/{id}/signature",
+            "method": "POST",
+            "summary": "e-Belge \u00f6zelle\u015ftirilebilir tasar\u0131ma imza eklemek i\u00e7in bu u\u00e7 kullan\u0131labilir."
+        },
+        {
+            "path": "/v1/definitions/documenttemplates/customizationsettings/{id}/signature",
+            "method": "DELETE",
+            "summary": "e-Belge \u00f6zelle\u015ftirilebilir tasar\u0131ma eklenmi\u015f olan imzay\u0131 silmek i\u00e7in bu u\u00e7 kullan\u0131labilir."
+        },
+        {
+            "path": "/v1/definitions/series",
+            "method": "GET",
+            "summary": "Serileri listeler"
+        },
+        {
+            "path": "/v1/definitions/series",
+            "method": "POST",
+            "summary": "Seri ekler"
+        },
+        {
+            "path": "/v1/definitions/series/{id}",
+            "method": "GET",
+            "summary": "Sorgulanan seriyi getirir"
+        },
+        {
+            "path": "/v1/definitions/series/{id}",
+            "method": "DELETE",
+            "summary": "Seri siler"
+        },
+        {
+            "path": "/v1/definitions/series/{serie}",
+            "method": "GET",
+            "summary": "\u00d6n eke g\u00f6re seriyi getirir"
+        },
+        {
+            "path": "/v1/definitions/series/{id}/set/{status}",
+            "method": "GET",
+            "summary": "Seri durumunu g\u00fcnceller"
+        },
+        {
+            "path": "/v1/definitions/series/{id}/setdefault",
+            "method": "GET",
+            "summary": "Seriyi varsay\u0131lan ayarlar"
+        },
+        {
+            "path": "/v1/definitions/series/{id}/{year}/setnumber/{nextNumber}",
+            "method": "GET",
+            "summary": "Saya\u00e7 g\u00fcnceller"
+        },
+        {
+            "path": "/v1/definitions/series/{serieId}/{year}/histories",
+            "method": "GET",
+            "summary": "Saya\u00e7 ge\u00e7mi\u015fi"
+        },
+        {
+            "path": "/v1/definitions/documenttemplates",
+            "method": "GET",
+            "summary": "Tasar\u0131mlar\u0131 listeler"
+        },
+        {
+            "path": "/v1/definitions/documenttemplates",
+            "method": "POST",
+            "summary": "Tasar\u0131m ekler"
+        },
+        {
+            "path": "/v1/definitions/documenttemplates/{id}",
+            "method": "GET",
+            "summary": "Tasar\u0131m dosyas\u0131n\u0131 indirir"
+        },
+        {
+            "path": "/v1/definitions/documenttemplates/{id}",
+            "method": "PUT",
+            "summary": "Tasar\u0131m\u0131 g\u00fcnceller"
+        },
+        {
+            "path": "/v1/definitions/documenttemplates/{id}",
+            "method": "DELETE",
+            "summary": "Tasar\u0131m\u0131 siler"
+        },
+        {
+            "path": "/v1/definitions/documenttemplates/{id}/setdefault",
+            "method": "GET",
+            "summary": "Tasar\u0131m\u0131 varsay\u0131lan ayarlar"
+        },
+        {
+            "path": "/v1/definitions/documenttemplates/{id}/preview",
+            "method": "POST",
+            "summary": "Tasar\u0131m\u0131 \u00f6nizler"
+        },
+        {
+            "path": "/v1/envelopes/{instanceIdentifier}/query",
+            "method": "GET",
+            "summary": "Zarf Durum Sorgular"
+        }
+    ],
+    "edespatch": [
+        {
+            "path": "/v1/definitions/fileexporttitles/{documentType}/titlekeys",
+            "method": "GET",
+            "summary": "Kullan\u0131labilir alanlar\u0131 listeler"
+        },
+        {
+            "path": "/v1/definitions/fileexporttitles/{documentType}/{extension}",
+            "method": "GET",
+            "summary": "Tan\u0131mlar\u0131 getirir"
+        },
+        {
+            "path": "/v1/definitions/fileexporttitles",
+            "method": "PUT",
+            "summary": "Tan\u0131mlar\u0131 g\u00fcnceller"
+        },
+        {
+            "path": "/v1/uploads/document/preview",
+            "method": "POST",
+            "summary": "Belge \u00f6nizleme"
+        },
+        {
+            "path": "/v1/uploads/document",
+            "method": "POST",
+            "summary": "Belge y\u00fckler"
+        },
+        {
+            "path": "/v1/uploads/document/{uuid}",
+            "method": "PUT",
+            "summary": "Belge g\u00fcnceller"
+        },
+        {
+            "path": "/v1/uploads/draft/send",
+            "method": "POST",
+            "summary": "Daha \u00f6nce g\u00f6nderilmi\u015f fakat taslak olan belgeleri, g\u00f6ndermek (resmile\u015ftirmek) i\u00e7in bu u\u00e7 kullan\u0131labilir."
+        },
+        {
+            "path": "/v1/tags",
+            "method": "GET",
+            "summary": "Etiketleri listeler"
+        },
+        {
+            "path": "/v1/tags",
+            "method": "POST",
+            "summary": "Etiket ekler"
+        },
+        {
+            "path": "/v1/tags/{id}",
+            "method": "GET",
+            "summary": "Sorgulanan etiketi getirir"
+        },
+        {
+            "path": "/v1/tags/{id}",
+            "method": "PUT",
+            "summary": "Etiket g\u00fcnceller"
+        },
+        {
+            "path": "/v1/tags/{id}",
+            "method": "DELETE",
+            "summary": "Etiket siler"
+        },
+        {
+            "path": "/v1/notifications/incoming/dynamicrules",
+            "method": "GET",
+            "summary": "Kurallar\u0131 listeler"
+        },
+        {
+            "path": "/v1/notifications/incoming/dynamicrules",
+            "method": "POST",
+            "summary": "Kural olu\u015fturur"
+        },
+        {
+            "path": "/v1/notifications/incoming/dynamicrules/{id}",
+            "method": "GET",
+            "summary": "Sorgulanan kural\u0131 getirir"
+        },
+        {
+            "path": "/v1/notifications/incoming/dynamicrules/{id}",
+            "method": "PUT",
+            "summary": "Kural g\u00fcnceller"
+        },
+        {
+            "path": "/v1/notifications/incoming/dynamicrules/{id}",
+            "method": "DELETE",
+            "summary": "Kural siler"
+        },
+        {
+            "path": "/v1/incoming/despatches/{uuid}/answer-by-incoming-despatch-uuid/xml",
+            "method": "GET",
+            "summary": "Belgeye ait yan\u0131t XML \u0130ndir"
+        },
+        {
+            "path": "/v1/incoming/despatches/{receiptAdviceUuid}/answer/xml",
+            "method": "GET",
+            "summary": "Giden e-\u0130rsaliye yan\u0131t\u0131 (ReceiptAdvice) ait XML \u0130ndir"
+        },
+        {
+            "path": "/v1/incoming/despatches/{uuid}/answer/pdf",
+            "method": "GET",
+            "summary": ""
+        },
+        {
+            "path": "/v1/incoming/despatches/{uuid}/xml",
+            "method": "GET",
+            "summary": "XML \u0130ndir"
+        },
+        {
+            "path": "/v1/incoming/despatches/{uuid}/pdf",
+            "method": "GET",
+            "summary": "PDF \u0130ndir"
+        },
+        {
+            "path": "/v1/incoming/despatches/{uuid}/envelope",
+            "method": "GET",
+            "summary": "Zarf XML \u0130ndir"
+        },
+        {
+            "path": "/v1/incoming/despatches/export/{fileType}",
+            "method": "POST",
+            "summary": "Toplu aktar"
+        },
+        {
+            "path": "/v1/incoming/reportmodule/reports",
+            "method": "GET",
+            "summary": "Rapor listeler"
+        },
+        {
+            "path": "/v1/incoming/reportmodule/reports",
+            "method": "POST",
+            "summary": "Rapor olu\u015fturur"
+        },
+        {
+            "path": "/v1/incoming/reportmodule/reports/{id}/download",
+            "method": "GET",
+            "summary": "Rapor indirir"
+        },
+        {
+            "path": "/v1/incoming/reportmodule/templates",
+            "method": "GET",
+            "summary": "\u015eablonlar\u0131 listeler"
+        },
+        {
+            "path": "/v1/incoming/reportmodule/templates",
+            "method": "POST",
+            "summary": "Rapor \u015fablonu olu\u015fturur"
+        },
+        {
+            "path": "/v1/incoming/reportmodule/templates/{id}",
+            "method": "GET",
+            "summary": "Sorgulanan \u015fablonu getirir"
+        },
+        {
+            "path": "/v1/incoming/reportmodule/templates/{id}",
+            "method": "PUT",
+            "summary": "Rapor \u015fablonunu g\u00fcnceller"
+        },
+        {
+            "path": "/v1/incoming/reportmodule/templates/{id}",
+            "method": "DELETE",
+            "summary": "Rapor \u015eablonunu siler"
+        },
+        {
+            "path": "/v1/incoming/reportmodule/columns",
+            "method": "GET",
+            "summary": "Kolonlar\u0131 listeler"
+        },
+        {
+            "path": "/v1/incoming/despatches/tags",
+            "method": "PUT",
+            "summary": "Etiket ekler/\u00e7\u0131kar\u0131r"
+        },
+        {
+            "path": "/v1/incoming/despatches/{uuid}/savecompanyindocument",
+            "method": "POST",
+            "summary": "Firma olarak kaydet"
+        },
+        {
+            "path": "/v1/incoming/despatches/bulk/{operation}",
+            "method": "PUT",
+            "summary": "Yeni durum atar"
+        },
+        {
+            "path": "/v1/incoming/despatches/{uuid}/usernotes",
+            "method": "GET",
+            "summary": "Kullan\u0131c\u0131 notu listeler"
+        },
+        {
+            "path": "/v1/incoming/despatches/{uuid}/usernotes",
+            "method": "POST",
+            "summary": "Kullan\u0131c\u0131 notu ekler"
+        },
+        {
+            "path": "/v1/incoming/despatches/{uuid}/usernotes/{id}",
+            "method": "PUT",
+            "summary": "Kullan\u0131c\u0131 notunu g\u00fcnceller"
+        },
+        {
+            "path": "/v1/incoming/despatches/{uuid}/usernotes/{id}",
+            "method": "DELETE",
+            "summary": "Kullan\u0131c\u0131 notunu siler"
+        },
+        {
+            "path": "/v1/incoming/receiptadvices",
+            "method": "GET",
+            "summary": "Giden irsaliyeye verilen yan\u0131tlar\u0131 (ReceiptAdvice) listeler"
+        },
+        {
+            "path": "/v1/incoming/receiptadvices/{uuid}",
+            "method": "GET",
+            "summary": "Belge detaylar\u0131n\u0131 getirir"
+        },
+        {
+            "path": "/v1/incoming/receiptadvices/{uuid}/html",
+            "method": "GET",
+            "summary": "Belgeyi g\u00f6r\u00fcnt\u00fcler"
+        },
+        {
+            "path": "/v1/incoming/receiptadvices/{uuid}/xml",
+            "method": "GET",
+            "summary": "Belgeye ait yan\u0131t XML \u0130ndir"
+        },
+        {
+            "path": "/v1/incoming/receiptadvices/{uuid}/pdf",
+            "method": "GET",
+            "summary": "PDF \u0130ndir"
+        },
+        {
+            "path": "/v1/incoming/despatches",
+            "method": "GET",
+            "summary": "\u0130rsaliyeleri listeler"
+        },
+        {
+            "path": "/v1/incoming/despatches/{uuid}",
+            "method": "GET",
+            "summary": "Belge detaylar\u0131n\u0131 getirir"
+        },
+        {
+            "path": "/v1/incoming/despatches/last",
+            "method": "GET",
+            "summary": "Gelen son 10 e-\u0130rsaliyeleri listeler"
+        },
+        {
+            "path": "/v1/incoming/despatches/{uuid}/histories",
+            "method": "GET",
+            "summary": "\u0130\u015flem ge\u00e7mi\u015fini getirir"
+        },
+        {
+            "path": "/v1/incoming/despatches/{uuid}/attachments",
+            "method": "GET",
+            "summary": "Belge eklerini listeler"
+        },
+        {
+            "path": "/v1/incoming/despatches/{uuid}/lines",
+            "method": "GET",
+            "summary": "Gelen irsaliye i\u00e7erisindeki kalemleri listeler"
+        },
+        {
+            "path": "/v1/incoming/despatches/{uuid}/receiptadvice",
+            "method": "POST",
+            "summary": "Gelen e-\u0130rsaliyeye yan\u0131t verilir (ReceiptAdvice)"
+        },
+        {
+            "path": "/v1/incoming/despatches/{uuid}/attachments/{index}",
+            "method": "GET",
+            "summary": "Belge ekini indirir"
+        },
+        {
+            "path": "/v1/incoming/despatches/{uuid}/html",
+            "method": "GET",
+            "summary": "Belgeyi g\u00f6r\u00fcnt\u00fcler"
+        },
+        {
+            "path": "/v1/incoming/despatches/{uuid}/answer/html",
+            "method": "GET",
+            "summary": "Belgeye ait yan\u0131t\u0131 g\u00f6r\u00fcnt\u00fcler"
+        },
+        {
+            "path": "/v1/incoming/despatches/{receiptAdviceUuid}/answer",
+            "method": "GET",
+            "summary": "ReceiptAdvice detaylar\u0131n\u0131 getirir"
+        },
+        {
+            "path": "/v1/incoming/despatches/email/send",
+            "method": "POST",
+            "summary": "Belgeyi mail olarak iletir"
+        },
+        {
+            "path": "/v1/notifications/outgoing/dynamicrules",
+            "method": "GET",
+            "summary": "Kurallar\u0131 listeler"
+        },
+        {
+            "path": "/v1/notifications/outgoing/dynamicrules",
+            "method": "POST",
+            "summary": "Kural olu\u015fturur"
+        },
+        {
+            "path": "/v1/notifications/outgoing/dynamicrules/{id}",
+            "method": "GET",
+            "summary": "Sorgulanan kural\u0131 getirir"
+        },
+        {
+            "path": "/v1/notifications/outgoing/dynamicrules/{id}",
+            "method": "PUT",
+            "summary": "Kural g\u00fcnceller"
+        },
+        {
+            "path": "/v1/notifications/outgoing/dynamicrules/{id}",
+            "method": "DELETE",
+            "summary": "Kural siler"
+        },
+        {
+            "path": "/v1/outgoing/despatches/{uuid}/answer/xml",
+            "method": "GET",
+            "summary": "Belgeye ait yan\u0131t XML \u0130ndir"
+        },
+        {
+            "path": "/v1/outgoing/despatches/{uuid}/answer/pdf",
+            "method": "GET",
+            "summary": ""
+        },
+        {
+            "path": "/v1/outgoing/despatches/{uuid}/xml",
+            "method": "GET",
+            "summary": "XML \u0130ndir"
+        },
+        {
+            "path": "/v1/outgoing/despatches/{uuid}/pdf",
+            "method": "GET",
+            "summary": "PDF \u0130ndir"
+        },
+        {
+            "path": "/v1/outgoing/despatches/{uuid}/envelope",
+            "method": "GET",
+            "summary": "Zarf XML \u0130ndir"
+        },
+        {
+            "path": "/v1/outgoing/despatches/export/{fileType}",
+            "method": "POST",
+            "summary": "Toplu aktar"
+        },
+        {
+            "path": "/v1/outgoing/reportmodule/reports",
+            "method": "GET",
+            "summary": "Rapor listeler"
+        },
+        {
+            "path": "/v1/outgoing/reportmodule/reports",
+            "method": "POST",
+            "summary": "Rapor olu\u015fturur"
+        },
+        {
+            "path": "/v1/outgoing/reportmodule/reports/{id}/download",
+            "method": "GET",
+            "summary": "Rapor indirir"
+        },
+        {
+            "path": "/v1/outgoing/reportmodule/templates",
+            "method": "GET",
+            "summary": "\u015eablonlar\u0131 listeler"
+        },
+        {
+            "path": "/v1/outgoing/reportmodule/templates",
+            "method": "POST",
+            "summary": "Rapor \u015fablonu olu\u015fturur"
+        },
+        {
+            "path": "/v1/outgoing/reportmodule/templates/{id}",
+            "method": "GET",
+            "summary": "Sorgulanan \u015fablonu getirir"
+        },
+        {
+            "path": "/v1/outgoing/reportmodule/templates/{id}",
+            "method": "PUT",
+            "summary": "Rapor \u015fablonunu g\u00fcnceller"
+        },
+        {
+            "path": "/v1/outgoing/reportmodule/templates/{id}",
+            "method": "DELETE",
+            "summary": "Rapor \u015eablonunu siler"
+        },
+        {
+            "path": "/v1/outgoing/reportmodule/columns",
+            "method": "GET",
+            "summary": "Kolonlar\u0131 listeler"
+        },
+        {
+            "path": "/v1/outgoing/despatches/tags",
+            "method": "PUT",
+            "summary": "Etiket ekler/\u00e7\u0131kar\u0131r"
+        },
+        {
+            "path": "/v1/outgoing/despatches/{uuid}/receiveralias",
+            "method": "PUT",
+            "summary": "Taslak belgelerin al\u0131c\u0131 etiketi bu u\u00e7 ile g\u00fcncellenebilir"
+        },
+        {
+            "path": "/v1/outgoing/despatches/{uuid}/savecompanyindocument",
+            "method": "POST",
+            "summary": "Firma olarak kaydet"
+        },
+        {
+            "path": "/v1/outgoing/despatches/bulk/{operation}",
+            "method": "PUT",
+            "summary": "Yeni durum atar"
+        },
+        {
+            "path": "/v1/uploads/resend/{uuid}",
+            "method": "POST",
+            "summary": "Hata alm\u0131\u015f bir belgeyi aynen yeniden g\u00f6nderir"
+        },
+        {
+            "path": "/v1/outgoing/despatches/{uuid}/usernotes",
+            "method": "GET",
+            "summary": "Kullan\u0131c\u0131 notu listeler"
+        },
+        {
+            "path": "/v1/outgoing/despatches/{uuid}/usernotes",
+            "method": "POST",
+            "summary": "Kullan\u0131c\u0131 notu ekler"
+        },
+        {
+            "path": "/v1/outgoing/despatches/{uuid}/usernotes/{id}",
+            "method": "PUT",
+            "summary": "Kullan\u0131c\u0131 notunu g\u00fcnceller"
+        },
+        {
+            "path": "/v1/outgoing/despatches/{uuid}/usernotes/{id}",
+            "method": "DELETE",
+            "summary": "Kullan\u0131c\u0131 notunu siler"
+        },
+        {
+            "path": "/v1/outgoing/receiptadvices",
+            "method": "GET",
+            "summary": "Gelen irsaliyeye verilen yan\u0131tlar\u0131 (ReceiptAdvice) listeler"
+        },
+        {
+            "path": "/v1/outgoing/receiptadvices/{uuid}",
+            "method": "GET",
+            "summary": "Belge detaylar\u0131n\u0131 getirir"
+        },
+        {
+            "path": "/v1/outgoing/receiptadvices/{uuid}/html",
+            "method": "GET",
+            "summary": "Belgeyi g\u00f6r\u00fcnt\u00fcler"
+        },
+        {
+            "path": "/v1/outgoing/receiptadvices/{uuid}/xml",
+            "method": "GET",
+            "summary": "Belgeye ait yan\u0131t XML \u0130ndir"
+        },
+        {
+            "path": "/v1/outgoing/receiptadvices/{uuid}/pdf",
+            "method": "GET",
+            "summary": "PDF \u0130ndir"
+        },
+        {
+            "path": "/v1/outgoing/despatches",
+            "method": "GET",
+            "summary": "\u0130rsaliyeleri listeler"
+        },
+        {
+            "path": "/v1/outgoing/despatches/last",
+            "method": "GET",
+            "summary": "Giden son 10 e-\u0130rsaliyeleri listeler"
+        },
+        {
+            "path": "/v1/outgoing/despatches/drafts",
+            "method": "GET",
+            "summary": "Taslak irsaliyeleri listeler"
+        },
+        {
+            "path": "/v1/outgoing/despatches/drafts",
+            "method": "DELETE",
+            "summary": "Taslak belgeleri silmek i\u00e7in bu u\u00e7 kullan\u0131lablir"
+        },
+        {
+            "path": "/v1/outgoing/despatches/{uuid}",
+            "method": "GET",
+            "summary": "Belge detaylar\u0131n\u0131 getirir"
+        },
+        {
+            "path": "/v1/outgoing/despatches/{uuid}/histories",
+            "method": "GET",
+            "summary": "\u0130\u015flem ge\u00e7mi\u015fini getirir"
+        },
+        {
+            "path": "/v1/outgoing/despatches/{uuid}/mailhistories",
+            "method": "GET",
+            "summary": "Mail ge\u00e7mi\u015fini getirir"
+        },
+        {
+            "path": "/v1/outgoing/despatches/{uuid}/mailaddresses",
+            "method": "GET",
+            "summary": "Mail adreslerini getirir"
+        },
+        {
+            "path": "/v1/outgoing/despatches/{uuid}/attachments",
+            "method": "GET",
+            "summary": "Belge eklerini listeler"
+        },
+        {
+            "path": "/v1/outgoing/despatches/{uuid}/attachments/{index}",
+            "method": "GET",
+            "summary": "Belge ekini indirir"
+        },
+        {
+            "path": "/v1/outgoing/despatches/{uuid}/html",
+            "method": "GET",
+            "summary": "Belgeyi g\u00f6r\u00fcnt\u00fcler"
+        },
+        {
+            "path": "/v1/outgoing/despatches/{uuid}/answer/html",
+            "method": "GET",
+            "summary": "Belgeye ait yan\u0131t\u0131 g\u00f6r\u00fcnt\u00fcler"
+        },
+        {
+            "path": "/v1/outgoing/despatches/email/send",
+            "method": "POST",
+            "summary": "Belgeyi mail olarak iletir"
+        },
+        {
+            "path": "/v1/definitions/mailing/email/settings",
+            "method": "GET",
+            "summary": "Mail ayarlar\u0131n\u0131 getirir"
+        },
+        {
+            "path": "/v1/definitions/mailing/email/settings",
+            "method": "PUT",
+            "summary": "Mail ayarlar\u0131n\u0131 g\u00fcnceller"
+        },
+        {
+            "path": "/v1/definitions/mailing/sms/settings",
+            "method": "GET",
+            "summary": "Sms ayarlar\u0131n\u0131 getirir"
+        },
+        {
+            "path": "/v1/definitions/mailing/sms/settings",
+            "method": "PUT",
+            "summary": "Sms ayarlar\u0131n\u0131 g\u00fcnceller"
+        },
+        {
+            "path": "/v1/users/zip/{aliasType}",
+            "method": "GET",
+            "summary": "M\u00fckellef listesini indirir"
+        },
+        {
+            "path": "/v1/users/{identifier}/{aliasType}",
+            "method": "GET",
+            "summary": "Kimlik No ile sorgular"
+        },
+        {
+            "path": "/v1/users/{aliasType}",
+            "method": "POST",
+            "summary": "Kimlik No ile sorgular"
+        },
+        {
+            "path": "/v1/users/search/{query}/{aliasType}",
+            "method": "GET",
+            "summary": "\u00dcnvan ile sorgular"
+        },
+        {
+            "path": "/v1/definitions/documenttemplates/customizationsettings",
+            "method": "GET",
+            "summary": "Tasar\u0131m ayarlar\u0131 d\u00f6n\u00fcl\u00fcr"
+        },
+        {
+            "path": "/v1/definitions/documenttemplates/customizationsettings",
+            "method": "POST",
+            "summary": "e-Belge \u00f6zelle\u015ftirilebilir tasar\u0131m eklemek i\u00e7in kullan\u0131l\u0131r."
+        },
+        {
+            "path": "/v1/definitions/documenttemplates/customizationsettings/{id}",
+            "method": "GET",
+            "summary": "Sorgulanan ayar\u0131 getirir"
+        },
+        {
+            "path": "/v1/definitions/documenttemplates/customizationsettings/{id}",
+            "method": "PUT",
+            "summary": "e-Belge \u00f6zelle\u015ftirilebilir tasar\u0131m\u0131n\u0131 g\u00fcncellemek i\u00e7in kullan\u0131l\u0131r."
+        },
+        {
+            "path": "/v1/definitions/documenttemplates/customizationsettings/{id}",
+            "method": "DELETE",
+            "summary": "e-Belge \u00f6zelle\u015ftirilebilir tasar\u0131m\u0131n\u0131 silmek i\u00e7in kullan\u0131l\u0131r."
+        },
+        {
+            "path": "/v1/definitions/documenttemplates/customizationsettings/{id}/setdefault",
+            "method": "GET",
+            "summary": ""
+        },
+        {
+            "path": "/v1/definitions/documenttemplates/customizationsettings/{id}/preview",
+            "method": "POST",
+            "summary": "Tasar\u0131m\u0131 \u00f6nizler"
+        },
+        {
+            "path": "/v1/definitions/documenttemplates/customizationsettings/{id}/logo",
+            "method": "GET",
+            "summary": "e-Belge \u00f6zelle\u015ftirilebilir tasar\u0131ma eklenmi\u015f olan logoya bu u\u00e7 ile ula\u015f\u0131labilir."
+        },
+        {
+            "path": "/v1/definitions/documenttemplates/customizationsettings/{id}/logo",
+            "method": "POST",
+            "summary": "e-Belge \u00f6zelle\u015ftirilebilir tasar\u0131ma logo eklemek i\u00e7in bu u\u00e7 kullan\u0131labilir."
+        },
+        {
+            "path": "/v1/definitions/documenttemplates/customizationsettings/{id}/logo",
+            "method": "DELETE",
+            "summary": "e-Belge \u00f6zelle\u015ftirilebilir tasar\u0131ma eklenmi\u015f olan logoyu silmek i\u00e7in bu u\u00e7 kullan\u0131labilir."
+        },
+        {
+            "path": "/v1/definitions/documenttemplates/customizationsettings/{id}/stamp",
+            "method": "GET",
+            "summary": "e-Belge \u00f6zelle\u015ftirilebilir tasar\u0131ma eklenmi\u015f olan ka\u015feye bu u\u00e7 ile ula\u015f\u0131labilir."
+        },
+        {
+            "path": "/v1/definitions/documenttemplates/customizationsettings/{id}/stamp",
+            "method": "POST",
+            "summary": "e-Belge \u00f6zelle\u015ftirilebilir tasar\u0131ma ka\u015fe eklemek i\u00e7in bu u\u00e7 kullan\u0131labilir."
+        },
+        {
+            "path": "/v1/definitions/documenttemplates/customizationsettings/{id}/stamp",
+            "method": "DELETE",
+            "summary": "e-Belge \u00f6zelle\u015ftirilebilir tasar\u0131ma eklenmi\u015f olan ka\u015feyi silmek i\u00e7in bu u\u00e7 kullan\u0131labilir."
+        },
+        {
+            "path": "/v1/definitions/documenttemplates/customizationsettings/{id}/signature",
+            "method": "GET",
+            "summary": "e-Belge \u00f6zelle\u015ftirilebilir tasar\u0131ma eklenmi\u015f olan imzaya bu u\u00e7 ile ula\u015f\u0131labilir."
+        },
+        {
+            "path": "/v1/definitions/documenttemplates/customizationsettings/{id}/signature",
+            "method": "POST",
+            "summary": "e-Belge \u00f6zelle\u015ftirilebilir tasar\u0131ma imza eklemek i\u00e7in bu u\u00e7 kullan\u0131labilir."
+        },
+        {
+            "path": "/v1/definitions/documenttemplates/customizationsettings/{id}/signature",
+            "method": "DELETE",
+            "summary": "e-Belge \u00f6zelle\u015ftirilebilir tasar\u0131ma eklenmi\u015f olan imzay\u0131 silmek i\u00e7in bu u\u00e7 kullan\u0131labilir."
+        },
+        {
+            "path": "/v1/definitions/series",
+            "method": "GET",
+            "summary": "Serileri listeler"
+        },
+        {
+            "path": "/v1/definitions/series",
+            "method": "POST",
+            "summary": "Seri ekler"
+        },
+        {
+            "path": "/v1/definitions/series/{id}",
+            "method": "GET",
+            "summary": "Sorgulanan seriyi getirir"
+        },
+        {
+            "path": "/v1/definitions/series/{id}",
+            "method": "DELETE",
+            "summary": "Seri siler"
+        },
+        {
+            "path": "/v1/definitions/series/{serie}",
+            "method": "GET",
+            "summary": "\u00d6n eke g\u00f6re seriyi getirir"
+        },
+        {
+            "path": "/v1/definitions/series/{id}/set/{status}",
+            "method": "GET",
+            "summary": "Seri durumunu g\u00fcnceller"
+        },
+        {
+            "path": "/v1/definitions/series/{id}/setdefault",
+            "method": "GET",
+            "summary": "Seriyi varsay\u0131lan ayarlar"
+        },
+        {
+            "path": "/v1/definitions/series/{id}/{year}/setnumber/{nextNumber}",
+            "method": "GET",
+            "summary": "Saya\u00e7 g\u00fcnceller"
+        },
+        {
+            "path": "/v1/definitions/series/{serieId}/{year}/histories",
+            "method": "GET",
+            "summary": "Saya\u00e7 ge\u00e7mi\u015fi"
+        },
+        {
+            "path": "/v1/definitions/documenttemplates",
+            "method": "GET",
+            "summary": "Tasar\u0131mlar\u0131 listeler"
+        },
+        {
+            "path": "/v1/definitions/documenttemplates",
+            "method": "POST",
+            "summary": "Tasar\u0131m ekler"
+        },
+        {
+            "path": "/v1/definitions/documenttemplates/{id}",
+            "method": "GET",
+            "summary": "Tasar\u0131m dosyas\u0131n\u0131 indirir"
+        },
+        {
+            "path": "/v1/definitions/documenttemplates/{id}",
+            "method": "PUT",
+            "summary": "Tasar\u0131m\u0131 g\u00fcnceller"
+        },
+        {
+            "path": "/v1/definitions/documenttemplates/{id}",
+            "method": "DELETE",
+            "summary": "Tasar\u0131m\u0131 siler"
+        },
+        {
+            "path": "/v1/definitions/documenttemplates/{id}/setdefault",
+            "method": "GET",
+            "summary": "Tasar\u0131m\u0131 varsay\u0131lan ayarlar"
+        },
+        {
+            "path": "/v1/definitions/documenttemplates/{id}/preview",
+            "method": "POST",
+            "summary": "Tasar\u0131m\u0131 \u00f6nizler"
+        },
+        {
+            "path": "/v1/answerseries",
+            "method": "GET",
+            "summary": "Serileri listeler"
+        },
+        {
+            "path": "/v1/answerseries",
+            "method": "POST",
+            "summary": "Seri ekler"
+        },
+        {
+            "path": "/v1/answerseries/{id}",
+            "method": "GET",
+            "summary": "Sorgulanan seriyi getirir"
+        },
+        {
+            "path": "/v1/answerseries/{id}",
+            "method": "DELETE",
+            "summary": "Seri siler"
+        },
+        {
+            "path": "/v1/answerseries/{serie}",
+            "method": "GET",
+            "summary": "\u00d6n eke g\u00f6re seriyi getirir"
+        },
+        {
+            "path": "/v1/answerseries/{id}/set/{status}",
+            "method": "GET",
+            "summary": "Seri durumunu g\u00fcnceller"
+        },
+        {
+            "path": "/v1/answerseries/{id}/setdefault",
+            "method": "GET",
+            "summary": "Seriyi varsay\u0131lan ayarlar"
+        },
+        {
+            "path": "/v1/answerseries/{id}/{year}/setnumber/{nextNumber}",
+            "method": "GET",
+            "summary": "Saya\u00e7 g\u00fcnceller"
+        },
+        {
+            "path": "/v1/answerseries/{serieId}/{year}/histories",
+            "method": "GET",
+            "summary": "Saya\u00e7 ge\u00e7mi\u015fi"
+        },
+        {
+            "path": "/v1/definitions/answerdocumenttemplates",
+            "method": "GET",
+            "summary": "Tasar\u0131mlar\u0131 listeler"
+        },
+        {
+            "path": "/v1/definitions/answerdocumenttemplates",
+            "method": "POST",
+            "summary": "Tasar\u0131m ekler"
+        },
+        {
+            "path": "/v1/definitions/answerdocumenttemplates/{id}",
+            "method": "GET",
+            "summary": "Tasar\u0131m dosyas\u0131n\u0131 indirir"
+        },
+        {
+            "path": "/v1/definitions/answerdocumenttemplates/{id}",
+            "method": "PUT",
+            "summary": "Tasar\u0131m\u0131 g\u00fcnceller"
+        },
+        {
+            "path": "/v1/definitions/answerdocumenttemplates/{id}",
+            "method": "DELETE",
+            "summary": "Tasar\u0131m\u0131 siler"
+        },
+        {
+            "path": "/v1/definitions/answerdocumenttemplates/{id}/setdefault",
+            "method": "GET",
+            "summary": "Tasar\u0131m\u0131 varsay\u0131lan ayarlar"
+        },
+        {
+            "path": "/v1/definitions/answerdocumenttemplates/{id}/preview",
+            "method": "POST",
+            "summary": "Tasar\u0131m\u0131 \u00f6nizler"
+        },
+        {
+            "path": "/v1/envelopes/{instanceIdentifier}/query",
+            "method": "GET",
+            "summary": "Zarf Durum Sorgular"
+        }
+    ],
+    "earchive": [
+        {
+            "path": "/v1/notifications/dynamicrules",
+            "method": "GET",
+            "summary": "Kurallar\u0131 listeler"
+        },
+        {
+            "path": "/v1/notifications/dynamicrules",
+            "method": "POST",
+            "summary": "Kural olu\u015fturur"
+        },
+        {
+            "path": "/v1/notifications/dynamicrules/{id}",
+            "method": "GET",
+            "summary": "Sorgulanan kural\u0131 getirir"
+        },
+        {
+            "path": "/v1/notifications/dynamicrules/{id}",
+            "method": "PUT",
+            "summary": "Kural g\u00fcnceller"
+        },
+        {
+            "path": "/v1/notifications/dynamicrules/{id}",
+            "method": "DELETE",
+            "summary": "Kural siler"
+        },
+        {
+            "path": "/v1/invoices/{uuid}/xml",
+            "method": "GET",
+            "summary": "XML \u0130ndir"
+        },
+        {
+            "path": "/v1/invoices/{uuid}/pdf",
+            "method": "GET",
+            "summary": "PDF \u0130ndir"
+        },
+        {
+            "path": "/v1/invoices/export/{fileType}",
+            "method": "POST",
+            "summary": "Toplu aktar"
+        },
+        {
+            "path": "/v1/definitions/fileexporttitles/{documentType}/titlekeys",
+            "method": "GET",
+            "summary": "Kullan\u0131labilir alanlar\u0131 listeler"
+        },
+        {
+            "path": "/v1/definitions/fileexporttitles/{documentType}/{extension}",
+            "method": "GET",
+            "summary": "Tan\u0131mlar\u0131 getirir"
+        },
+        {
+            "path": "/v1/definitions/fileexporttitles",
+            "method": "PUT",
+            "summary": "Tan\u0131mlar\u0131 g\u00fcnceller"
+        },
+        {
+            "path": "/v1/uploads/document/preview",
+            "method": "POST",
+            "summary": "Belge \u00f6nizleme"
+        },
+        {
+            "path": "/v1/uploads/document",
+            "method": "POST",
+            "summary": "Belge y\u00fckler"
+        },
+        {
+            "path": "/v1/uploads/document/{uuid}",
+            "method": "PUT",
+            "summary": "Belge g\u00fcnceller"
+        },
+        {
+            "path": "/v1/uploads/draft/send",
+            "method": "POST",
+            "summary": "Daha \u00f6nce g\u00f6nderilmi\u015f fakat taslak olan belgeleri, g\u00f6ndermek (resmile\u015ftirmek) i\u00e7in bu u\u00e7 kullan\u0131labilir."
+        },
+        {
+            "path": "/v1/uploads/draft/create/{id}",
+            "method": "POST",
+            "summary": "Belge y\u00fckler"
+        },
+        {
+            "path": "/v1/uploads/marketplaces/{id}/orders/{orderId}/preview",
+            "method": "POST",
+            "summary": "Belirtilen pazaryerindeki sipari\u015fin faturas\u0131n\u0131 \u00f6nizler"
+        },
+        {
+            "path": "/v1/uploads/marketplaces/{id}/orders/createinvoice",
+            "method": "POST",
+            "summary": "Belirtilen pazaryerindeki sipari\u015fin faturas\u0131n\u0131 \u00f6nizler"
+        },
+        {
+            "path": "/v1/exinvoices",
+            "method": "GET",
+            "summary": "Belgeleri listeler"
+        },
+        {
+            "path": "/v1/exinvoices",
+            "method": "POST",
+            "summary": "Eski belge y\u00fckler"
+        },
+        {
+            "path": "/v1/exinvoices/queue",
+            "method": "GET",
+            "summary": "Y\u00fckleme kuyru\u011funu listeler"
+        },
+        {
+            "path": "/v1/exinvoices/queue/{id}",
+            "method": "GET",
+            "summary": "Y\u00fckleme sonucunu indir"
+        },
+        {
+            "path": "/v1/exinvoices/{uuid}/xml",
+            "method": "GET",
+            "summary": "XML \u0130ndir"
+        },
+        {
+            "path": "/v1/exinvoices/{uuid}/pdf",
+            "method": "GET",
+            "summary": "PDF \u0130ndir"
+        },
+        {
+            "path": "/v1/exinvoices/{uuid}/html",
+            "method": "GET",
+            "summary": "Belgeyi g\u00f6r\u00fcnt\u00fcler"
+        },
+        {
+            "path": "/v1/exinvoices/export/{fileType}",
+            "method": "POST",
+            "summary": "D\u0131\u015far\u0131 Aktar"
+        },
+        {
+            "path": "/v1/tags",
+            "method": "GET",
+            "summary": "Etiketleri listeler"
+        },
+        {
+            "path": "/v1/tags",
+            "method": "POST",
+            "summary": "Etiket ekler"
+        },
+        {
+            "path": "/v1/tags/{id}",
+            "method": "GET",
+            "summary": "Sorgulanan etiketi getirir"
+        },
+        {
+            "path": "/v1/tags/{id}",
+            "method": "PUT",
+            "summary": "Etiket g\u00fcnceller"
+        },
+        {
+            "path": "/v1/tags/{id}",
+            "method": "DELETE",
+            "summary": "Etiket siler"
+        },
+        {
+            "path": "/v1/outgoing/reportmodule/reports",
+            "method": "GET",
+            "summary": "Rapor listeler"
+        },
+        {
+            "path": "/v1/outgoing/reportmodule/reports",
+            "method": "POST",
+            "summary": "Rapor olu\u015fturur"
+        },
+        {
+            "path": "/v1/outgoing/reportmodule/reports/{id}/download",
+            "method": "GET",
+            "summary": "Rapor indirir"
+        },
+        {
+            "path": "/v1/outgoing/reportmodule/templates",
+            "method": "GET",
+            "summary": "\u015eablonlar\u0131 listeler"
+        },
+        {
+            "path": "/v1/outgoing/reportmodule/templates",
+            "method": "POST",
+            "summary": "Rapor \u015fablonu olu\u015fturur"
+        },
+        {
+            "path": "/v1/outgoing/reportmodule/templates/{id}",
+            "method": "GET",
+            "summary": "Sorgulanan \u015fablonu getirir"
+        },
+        {
+            "path": "/v1/outgoing/reportmodule/templates/{id}",
+            "method": "PUT",
+            "summary": "Rapor \u015fablonunu g\u00fcnceller"
+        },
+        {
+            "path": "/v1/outgoing/reportmodule/templates/{id}",
+            "method": "DELETE",
+            "summary": "Rapor \u015eablonunu siler"
+        },
+        {
+            "path": "/v1/outgoing/reportmodule/columns",
+            "method": "GET",
+            "summary": "Kolonlar\u0131 listeler"
+        },
+        {
+            "path": "/v1/invoices/cancel",
+            "method": "POST",
+            "summary": "Belgeyi iptal eder"
+        },
+        {
+            "path": "/v1/invoices/canceled/withdraw",
+            "method": "POST",
+            "summary": "\u0130ptal i\u015flemini geri al\u0131r"
+        },
+        {
+            "path": "/v1/invoices/tags",
+            "method": "PUT",
+            "summary": "Etiket ekler/\u00e7\u0131kar\u0131r"
+        },
+        {
+            "path": "/v1/invoices/{uuid}/savecompanyindocument",
+            "method": "POST",
+            "summary": "Firma olarak kaydet"
+        },
+        {
+            "path": "/v1/invoices/bulk/{operation}",
+            "method": "PUT",
+            "summary": "Yeni durum atar"
+        },
+        {
+            "path": "/v1/invoices",
+            "method": "GET",
+            "summary": "Faturalar\u0131 listeler"
+        },
+        {
+            "path": "/v1/invoices/last",
+            "method": "GET",
+            "summary": "Son 10 e-Ar\u015fiv faturay\u0131 listeler"
+        },
+        {
+            "path": "/v1/invoices/drafts",
+            "method": "GET",
+            "summary": "Taslak faturalar\u0131 listeler"
+        },
+        {
+            "path": "/v1/invoices/drafts",
+            "method": "DELETE",
+            "summary": "Taslak belgeleri silmek i\u00e7in bu u\u00e7 kullan\u0131lablir"
+        },
+        {
+            "path": "/v1/invoices/{uuid}",
+            "method": "GET",
+            "summary": "Belge detaylar\u0131n\u0131 getirir"
+        },
+        {
+            "path": "/v1/invoices/{uuid}/despatches",
+            "method": "GET",
+            "summary": "\u0130rsaliye bilgilerini getirir"
+        },
+        {
+            "path": "/v1/invoices/{uuid}/taxes",
+            "method": "GET",
+            "summary": "Vergi bilgilerini getirir"
+        },
+        {
+            "path": "/v1/invoices/{uuid}/histories",
+            "method": "GET",
+            "summary": "\u0130\u015flem ge\u00e7mi\u015fini getirir"
+        },
+        {
+            "path": "/v1/invoices/{uuid}/mailhistories",
+            "method": "GET",
+            "summary": "Mail ge\u00e7mi\u015fini getirir"
+        },
+        {
+            "path": "/v1/invoices/{uuid}/mailaddresses",
+            "method": "GET",
+            "summary": "Mail adreslerini getirir"
+        },
+        {
+            "path": "/v1/invoices/{uuid}/smshistories",
+            "method": "GET",
+            "summary": "Sms ge\u00e7mi\u015fini getirir"
+        },
+        {
+            "path": "/v1/invoices/{uuid}/internetinfos",
+            "method": "GET",
+            "summary": "\u0130nternet sat\u0131\u015f bilgileri getir"
+        },
+        {
+            "path": "/v1/invoices/canceled",
+            "method": "GET",
+            "summary": "\u0130ptal edilen faturalar"
+        },
+        {
+            "path": "/v1/invoices/canceled/last",
+            "method": "GET",
+            "summary": "\u0130ptal edilmi\u015f son 10 e-Ar\u015fiv faturay\u0131 listeler"
+        },
+        {
+            "path": "/v1/invoices/{uuid}/attachments",
+            "method": "GET",
+            "summary": "Belge eklerini listeler"
+        },
+        {
+            "path": "/v1/invoices/{uuid}/attachments/{index}",
+            "method": "GET",
+            "summary": "Belge ekini indirir"
+        },
+        {
+            "path": "/v1/invoices/{uuid}/html",
+            "method": "GET",
+            "summary": "Belgeyi g\u00f6r\u00fcnt\u00fcler"
+        },
+        {
+            "path": "/v1/invoices/email/send",
+            "method": "POST",
+            "summary": "Belgeyi mail olarak iletir"
+        },
+        {
+            "path": "/v1/invoices/{uuid}/usernotes",
+            "method": "GET",
+            "summary": "Kullan\u0131c\u0131 notu listeler"
+        },
+        {
+            "path": "/v1/invoices/{uuid}/usernotes",
+            "method": "POST",
+            "summary": "Kullan\u0131c\u0131 notu ekler"
+        },
+        {
+            "path": "/v1/invoices/{uuid}/usernotes/{id}",
+            "method": "PUT",
+            "summary": "Kullan\u0131c\u0131 notunu g\u00fcnceller"
+        },
+        {
+            "path": "/v1/invoices/{uuid}/usernotes/{id}",
+            "method": "DELETE",
+            "summary": "Kullan\u0131c\u0131 notunu siler"
+        },
+        {
+            "path": "/v1/definitions/mailing/email/settings",
+            "method": "GET",
+            "summary": "Mail ayarlar\u0131n\u0131 getirir"
+        },
+        {
+            "path": "/v1/definitions/mailing/email/settings",
+            "method": "PUT",
+            "summary": "Mail ayarlar\u0131n\u0131 g\u00fcnceller"
+        },
+        {
+            "path": "/v1/definitions/mailing/sms/settings",
+            "method": "GET",
+            "summary": "Sms ayarlar\u0131n\u0131 getirir"
+        },
+        {
+            "path": "/v1/definitions/mailing/sms/settings",
+            "method": "PUT",
+            "summary": "Sms ayarlar\u0131n\u0131 g\u00fcnceller"
+        },
+        {
+            "path": "/v1/definitions/documenttemplates/customizationsettings",
+            "method": "GET",
+            "summary": "Tasar\u0131m ayarlar\u0131 d\u00f6n\u00fcl\u00fcr"
+        },
+        {
+            "path": "/v1/definitions/documenttemplates/customizationsettings",
+            "method": "POST",
+            "summary": "e-Belge \u00f6zelle\u015ftirilebilir tasar\u0131m eklemek i\u00e7in kullan\u0131l\u0131r."
+        },
+        {
+            "path": "/v1/definitions/documenttemplates/customizationsettings/{id}",
+            "method": "GET",
+            "summary": "Sorgulanan ayar\u0131 getirir"
+        },
+        {
+            "path": "/v1/definitions/documenttemplates/customizationsettings/{id}",
+            "method": "PUT",
+            "summary": "e-Belge \u00f6zelle\u015ftirilebilir tasar\u0131m\u0131n\u0131 g\u00fcncellemek i\u00e7in kullan\u0131l\u0131r."
+        },
+        {
+            "path": "/v1/definitions/documenttemplates/customizationsettings/{id}",
+            "method": "DELETE",
+            "summary": "e-Belge \u00f6zelle\u015ftirilebilir tasar\u0131m\u0131n\u0131 silmek i\u00e7in kullan\u0131l\u0131r."
+        },
+        {
+            "path": "/v1/definitions/documenttemplates/customizationsettings/{id}/setdefault",
+            "method": "GET",
+            "summary": ""
+        },
+        {
+            "path": "/v1/definitions/documenttemplates/customizationsettings/{id}/preview",
+            "method": "POST",
+            "summary": "Tasar\u0131m\u0131 \u00f6nizler"
+        },
+        {
+            "path": "/v1/definitions/documenttemplates/customizationsettings/{id}/logo",
+            "method": "GET",
+            "summary": "e-Belge \u00f6zelle\u015ftirilebilir tasar\u0131ma eklenmi\u015f olan logoya bu u\u00e7 ile ula\u015f\u0131labilir."
+        },
+        {
+            "path": "/v1/definitions/documenttemplates/customizationsettings/{id}/logo",
+            "method": "POST",
+            "summary": "e-Belge \u00f6zelle\u015ftirilebilir tasar\u0131ma logo eklemek i\u00e7in bu u\u00e7 kullan\u0131labilir."
+        },
+        {
+            "path": "/v1/definitions/documenttemplates/customizationsettings/{id}/logo",
+            "method": "DELETE",
+            "summary": "e-Belge \u00f6zelle\u015ftirilebilir tasar\u0131ma eklenmi\u015f olan logoyu silmek i\u00e7in bu u\u00e7 kullan\u0131labilir."
+        },
+        {
+            "path": "/v1/definitions/documenttemplates/customizationsettings/{id}/stamp",
+            "method": "GET",
+            "summary": "e-Belge \u00f6zelle\u015ftirilebilir tasar\u0131ma eklenmi\u015f olan ka\u015feye bu u\u00e7 ile ula\u015f\u0131labilir."
+        },
+        {
+            "path": "/v1/definitions/documenttemplates/customizationsettings/{id}/stamp",
+            "method": "POST",
+            "summary": "e-Belge \u00f6zelle\u015ftirilebilir tasar\u0131ma ka\u015fe eklemek i\u00e7in bu u\u00e7 kullan\u0131labilir."
+        },
+        {
+            "path": "/v1/definitions/documenttemplates/customizationsettings/{id}/stamp",
+            "method": "DELETE",
+            "summary": "e-Belge \u00f6zelle\u015ftirilebilir tasar\u0131ma eklenmi\u015f olan ka\u015feyi silmek i\u00e7in bu u\u00e7 kullan\u0131labilir."
+        },
+        {
+            "path": "/v1/definitions/documenttemplates/customizationsettings/{id}/signature",
+            "method": "GET",
+            "summary": "e-Belge \u00f6zelle\u015ftirilebilir tasar\u0131ma eklenmi\u015f olan imzaya bu u\u00e7 ile ula\u015f\u0131labilir."
+        },
+        {
+            "path": "/v1/definitions/documenttemplates/customizationsettings/{id}/signature",
+            "method": "POST",
+            "summary": "e-Belge \u00f6zelle\u015ftirilebilir tasar\u0131ma imza eklemek i\u00e7in bu u\u00e7 kullan\u0131labilir."
+        },
+        {
+            "path": "/v1/definitions/documenttemplates/customizationsettings/{id}/signature",
+            "method": "DELETE",
+            "summary": "e-Belge \u00f6zelle\u015ftirilebilir tasar\u0131ma eklenmi\u015f olan imzay\u0131 silmek i\u00e7in bu u\u00e7 kullan\u0131labilir."
+        },
+        {
+            "path": "/v1/definitions/series",
+            "method": "GET",
+            "summary": "Serileri listeler"
+        },
+        {
+            "path": "/v1/definitions/series",
+            "method": "POST",
+            "summary": "Seri ekler"
+        },
+        {
+            "path": "/v1/definitions/series/{id}",
+            "method": "GET",
+            "summary": "Sorgulanan seriyi getirir"
+        },
+        {
+            "path": "/v1/definitions/series/{id}",
+            "method": "DELETE",
+            "summary": "Seri siler"
+        },
+        {
+            "path": "/v1/definitions/series/{serie}",
+            "method": "GET",
+            "summary": "\u00d6n eke g\u00f6re seriyi getirir"
+        },
+        {
+            "path": "/v1/definitions/series/{id}/set/{status}",
+            "method": "GET",
+            "summary": "Seri durumunu g\u00fcnceller"
+        },
+        {
+            "path": "/v1/definitions/series/{id}/setdefault",
+            "method": "GET",
+            "summary": "Seriyi varsay\u0131lan ayarlar"
+        },
+        {
+            "path": "/v1/definitions/series/{id}/{year}/setnumber/{nextNumber}",
+            "method": "GET",
+            "summary": "Saya\u00e7 g\u00fcnceller"
+        },
+        {
+            "path": "/v1/definitions/series/{serieId}/{year}/histories",
+            "method": "GET",
+            "summary": "Saya\u00e7 ge\u00e7mi\u015fi"
+        },
+        {
+            "path": "/v1/definitions/documenttemplates",
+            "method": "GET",
+            "summary": "Tasar\u0131mlar\u0131 listeler"
+        },
+        {
+            "path": "/v1/definitions/documenttemplates",
+            "method": "POST",
+            "summary": "Tasar\u0131m ekler"
+        },
+        {
+            "path": "/v1/definitions/documenttemplates/{id}",
+            "method": "GET",
+            "summary": "Tasar\u0131m dosyas\u0131n\u0131 indirir"
+        },
+        {
+            "path": "/v1/definitions/documenttemplates/{id}",
+            "method": "PUT",
+            "summary": "Tasar\u0131m\u0131 g\u00fcnceller"
+        },
+        {
+            "path": "/v1/definitions/documenttemplates/{id}",
+            "method": "DELETE",
+            "summary": "Tasar\u0131m\u0131 siler"
+        },
+        {
+            "path": "/v1/definitions/documenttemplates/{id}/setdefault",
+            "method": "GET",
+            "summary": "Tasar\u0131m\u0131 varsay\u0131lan ayarlar"
+        },
+        {
+            "path": "/v1/definitions/documenttemplates/{id}/preview",
+            "method": "POST",
+            "summary": "Tasar\u0131m\u0131 \u00f6nizler"
+        }
+    ],
+    "esmm": [
+        {
+            "path": "/v1/notifications/dynamicrules",
+            "method": "GET",
+            "summary": "Kurallar\u0131 listeler"
+        },
+        {
+            "path": "/v1/notifications/dynamicrules",
+            "method": "POST",
+            "summary": "Kural olu\u015fturur"
+        },
+        {
+            "path": "/v1/notifications/dynamicrules/{id}",
+            "method": "GET",
+            "summary": "Sorgulanan kural\u0131 getirir"
+        },
+        {
+            "path": "/v1/notifications/dynamicrules/{id}",
+            "method": "PUT",
+            "summary": "Kural g\u00fcnceller"
+        },
+        {
+            "path": "/v1/notifications/dynamicrules/{id}",
+            "method": "DELETE",
+            "summary": "Kural siler"
+        },
+        {
+            "path": "/v1/vouchers/{uuid}/freelancervoucherXml",
+            "method": "GET",
+            "summary": "FreelancerVoucher XML \u0130ndir"
+        },
+        {
+            "path": "/v1/vouchers/{uuid}/xml",
+            "method": "GET",
+            "summary": "e-ArsivVeri XML dosyas\u0131n\u0131 indir"
+        },
+        {
+            "path": "/v1/vouchers/{uuid}/pdf",
+            "method": "GET",
+            "summary": "PDF \u0130ndir"
+        },
+        {
+            "path": "/v1/vouchers/export/{fileType}",
+            "method": "POST",
+            "summary": "Toplu aktar"
+        },
+        {
+            "path": "/v1/definitions/fileexporttitles/{documentType}/titlekeys",
+            "method": "GET",
+            "summary": "Kullan\u0131labilir alanlar\u0131 listeler"
+        },
+        {
+            "path": "/v1/definitions/fileexporttitles/{documentType}/{extension}",
+            "method": "GET",
+            "summary": "Tan\u0131mlar\u0131 getirir"
+        },
+        {
+            "path": "/v1/definitions/fileexporttitles",
+            "method": "PUT",
+            "summary": "Tan\u0131mlar\u0131 g\u00fcnceller"
+        },
+        {
+            "path": "/v1/uploads/document/preview",
+            "method": "POST",
+            "summary": "Belge \u00f6nizleme"
+        },
+        {
+            "path": "/v1/uploads/document",
+            "method": "POST",
+            "summary": "Belge y\u00fckler"
+        },
+        {
+            "path": "/v1/uploads/document/{uuid}",
+            "method": "PUT",
+            "summary": "Belge g\u00fcnceller"
+        },
+        {
+            "path": "/v1/uploads/draft/send",
+            "method": "POST",
+            "summary": "Daha \u00f6nce g\u00f6nderilmi\u015f fakat taslak olan belgeleri, g\u00f6ndermek (resmile\u015ftirmek) i\u00e7in bu u\u00e7 kullan\u0131labilir."
+        },
+        {
+            "path": "/v1/uploads/draft/create/{id}",
+            "method": "POST",
+            "summary": "Taslak Belge y\u00fckler"
+        },
+        {
+            "path": "/v1/tags",
+            "method": "GET",
+            "summary": "Etiketleri listeler"
+        },
+        {
+            "path": "/v1/tags",
+            "method": "POST",
+            "summary": "Etiket ekler"
+        },
+        {
+            "path": "/v1/tags/{id}",
+            "method": "GET",
+            "summary": "Sorgulanan etiketi getirir"
+        },
+        {
+            "path": "/v1/tags/{id}",
+            "method": "PUT",
+            "summary": "Etiket g\u00fcnceller"
+        },
+        {
+            "path": "/v1/tags/{id}",
+            "method": "DELETE",
+            "summary": "Etiket siler"
+        },
+        {
+            "path": "/v1/outgoing/reportmodule/reports",
+            "method": "GET",
+            "summary": "Rapor listeler"
+        },
+        {
+            "path": "/v1/outgoing/reportmodule/reports",
+            "method": "POST",
+            "summary": "Rapor olu\u015fturur"
+        },
+        {
+            "path": "/v1/outgoing/reportmodule/reports/{id}/download",
+            "method": "GET",
+            "summary": "Rapor indirir"
+        },
+        {
+            "path": "/v1/outgoing/reportmodule/templates",
+            "method": "GET",
+            "summary": "\u015eablonlar\u0131 listeler"
+        },
+        {
+            "path": "/v1/outgoing/reportmodule/templates",
+            "method": "POST",
+            "summary": "Rapor \u015fablonu olu\u015fturur"
+        },
+        {
+            "path": "/v1/outgoing/reportmodule/templates/{id}",
+            "method": "GET",
+            "summary": "Sorgulanan \u015fablonu getirir"
+        },
+        {
+            "path": "/v1/outgoing/reportmodule/templates/{id}",
+            "method": "PUT",
+            "summary": "Rapor \u015fablonunu g\u00fcnceller"
+        },
+        {
+            "path": "/v1/outgoing/reportmodule/templates/{id}",
+            "method": "DELETE",
+            "summary": "Rapor \u015eablonunu siler"
+        },
+        {
+            "path": "/v1/outgoing/reportmodule/columns",
+            "method": "GET",
+            "summary": "Kolonlar\u0131 listeler"
+        },
+        {
+            "path": "/v1/vouchers/{uuid}/usernotes",
+            "method": "GET",
+            "summary": "Kullan\u0131c\u0131 notu listeler"
+        },
+        {
+            "path": "/v1/vouchers/{uuid}/usernotes",
+            "method": "POST",
+            "summary": "Kullan\u0131c\u0131 notu ekler"
+        },
+        {
+            "path": "/v1/vouchers/{uuid}/usernotes/{id}",
+            "method": "PUT",
+            "summary": "Kullan\u0131c\u0131 notunu g\u00fcnceller"
+        },
+        {
+            "path": "/v1/vouchers/{uuid}/usernotes/{id}",
+            "method": "DELETE",
+            "summary": "Kullan\u0131c\u0131 notunu siler"
+        },
+        {
+            "path": "/v1/definitions/mailing/email/settings",
+            "method": "GET",
+            "summary": "Mail ayarlar\u0131n\u0131 getirir"
+        },
+        {
+            "path": "/v1/definitions/mailing/email/settings",
+            "method": "PUT",
+            "summary": "Mail ayarlar\u0131n\u0131 g\u00fcnceller"
+        },
+        {
+            "path": "/v1/definitions/mailing/sms/settings",
+            "method": "GET",
+            "summary": "Sms ayarlar\u0131n\u0131 getirir"
+        },
+        {
+            "path": "/v1/definitions/mailing/sms/settings",
+            "method": "PUT",
+            "summary": "Sms ayarlar\u0131n\u0131 g\u00fcnceller"
+        },
+        {
+            "path": "/v1/vouchers/cancel",
+            "method": "POST",
+            "summary": "Belgeyi iptal eder"
+        },
+        {
+            "path": "/v1/vouchers/canceled/withdraw",
+            "method": "POST",
+            "summary": "\u0130ptal i\u015flemini geri al\u0131r"
+        },
+        {
+            "path": "/v1/vouchers/tags",
+            "method": "PUT",
+            "summary": "Etiket ekler/\u00e7\u0131kar\u0131r"
+        },
+        {
+            "path": "/v1/vouchers/{uuid}/savecompanyindocument",
+            "method": "POST",
+            "summary": "Firma olarak kaydet"
+        },
+        {
+            "path": "/v1/vouchers/bulk/{operation}",
+            "method": "PUT",
+            "summary": "Yeni durum atar"
+        },
+        {
+            "path": "/v1/vouchers",
+            "method": "GET",
+            "summary": "Makbuzlar\u0131 listeler"
+        },
+        {
+            "path": "/v1/vouchers/drafts",
+            "method": "GET",
+            "summary": "Taslak makbuzlar\u0131 listeler"
+        },
+        {
+            "path": "/v1/vouchers/drafts",
+            "method": "DELETE",
+            "summary": "Taslak belgeleri silmek i\u00e7in bu u\u00e7 kullan\u0131lablir"
+        },
+        {
+            "path": "/v1/vouchers/last",
+            "method": "GET",
+            "summary": "Son 10 makbuzu listeler"
+        },
+        {
+            "path": "/v1/vouchers/{uuid}/taxes",
+            "method": "GET",
+            "summary": "Vergi bilgilerini getirir"
+        },
+        {
+            "path": "/v1/vouchers/{uuid}/histories",
+            "method": "GET",
+            "summary": "\u0130\u015flem ge\u00e7mi\u015fini getirir"
+        },
+        {
+            "path": "/v1/vouchers/{uuid}/mailhistories",
+            "method": "GET",
+            "summary": "Mail ge\u00e7mi\u015fini getirir"
+        },
+        {
+            "path": "/v1/vouchers/{uuid}/mailaddresses",
+            "method": "GET",
+            "summary": "Mail adreslerini getirir"
+        },
+        {
+            "path": "/v1/vouchers/canceled",
+            "method": "GET",
+            "summary": "\u0130ptal edilen makbuzlar"
+        },
+        {
+            "path": "/v1/vouchers/canceled/last",
+            "method": "GET",
+            "summary": "\u0130ptal edilen son 10 makbuz"
+        },
+        {
+            "path": "/v1/vouchers/{uuid}/html",
+            "method": "GET",
+            "summary": "Belgeyi g\u00f6r\u00fcnt\u00fcler"
+        },
+        {
+            "path": "/v1/vouchers/email/send",
+            "method": "POST",
+            "summary": "Belgeyi mail olarak iletir"
+        },
+        {
+            "path": "/v1/definitions/documenttemplates/customizationsettings",
+            "method": "GET",
+            "summary": "Tasar\u0131m ayarlar\u0131 d\u00f6n\u00fcl\u00fcr"
+        },
+        {
+            "path": "/v1/definitions/documenttemplates/customizationsettings",
+            "method": "POST",
+            "summary": "e-Belge \u00f6zelle\u015ftirilebilir tasar\u0131m eklemek i\u00e7in kullan\u0131l\u0131r."
+        },
+        {
+            "path": "/v1/definitions/documenttemplates/customizationsettings/{id}",
+            "method": "GET",
+            "summary": "Sorgulanan ayar\u0131 getirir"
+        },
+        {
+            "path": "/v1/definitions/documenttemplates/customizationsettings/{id}",
+            "method": "PUT",
+            "summary": "e-Belge \u00f6zelle\u015ftirilebilir tasar\u0131m\u0131n\u0131 g\u00fcncellemek i\u00e7in kullan\u0131l\u0131r."
+        },
+        {
+            "path": "/v1/definitions/documenttemplates/customizationsettings/{id}",
+            "method": "DELETE",
+            "summary": "e-Belge \u00f6zelle\u015ftirilebilir tasar\u0131m\u0131n\u0131 silmek i\u00e7in kullan\u0131l\u0131r."
+        },
+        {
+            "path": "/v1/definitions/documenttemplates/customizationsettings/{id}/setdefault",
+            "method": "GET",
+            "summary": ""
+        },
+        {
+            "path": "/v1/definitions/documenttemplates/customizationsettings/{id}/preview",
+            "method": "POST",
+            "summary": "Tasar\u0131m\u0131 \u00f6nizler"
+        },
+        {
+            "path": "/v1/definitions/documenttemplates/customizationsettings/{id}/logo",
+            "method": "GET",
+            "summary": "e-Belge \u00f6zelle\u015ftirilebilir tasar\u0131ma eklenmi\u015f olan logoya bu u\u00e7 ile ula\u015f\u0131labilir."
+        },
+        {
+            "path": "/v1/definitions/documenttemplates/customizationsettings/{id}/logo",
+            "method": "POST",
+            "summary": "e-Belge \u00f6zelle\u015ftirilebilir tasar\u0131ma logo eklemek i\u00e7in bu u\u00e7 kullan\u0131labilir."
+        },
+        {
+            "path": "/v1/definitions/documenttemplates/customizationsettings/{id}/logo",
+            "method": "DELETE",
+            "summary": "e-Belge \u00f6zelle\u015ftirilebilir tasar\u0131ma eklenmi\u015f olan logoyu silmek i\u00e7in bu u\u00e7 kullan\u0131labilir."
+        },
+        {
+            "path": "/v1/definitions/documenttemplates/customizationsettings/{id}/stamp",
+            "method": "GET",
+            "summary": "e-Belge \u00f6zelle\u015ftirilebilir tasar\u0131ma eklenmi\u015f olan ka\u015feye bu u\u00e7 ile ula\u015f\u0131labilir."
+        },
+        {
+            "path": "/v1/definitions/documenttemplates/customizationsettings/{id}/stamp",
+            "method": "POST",
+            "summary": "e-Belge \u00f6zelle\u015ftirilebilir tasar\u0131ma ka\u015fe eklemek i\u00e7in bu u\u00e7 kullan\u0131labilir."
+        },
+        {
+            "path": "/v1/definitions/documenttemplates/customizationsettings/{id}/stamp",
+            "method": "DELETE",
+            "summary": "e-Belge \u00f6zelle\u015ftirilebilir tasar\u0131ma eklenmi\u015f olan ka\u015feyi silmek i\u00e7in bu u\u00e7 kullan\u0131labilir."
+        },
+        {
+            "path": "/v1/definitions/documenttemplates/customizationsettings/{id}/signature",
+            "method": "GET",
+            "summary": "e-Belge \u00f6zelle\u015ftirilebilir tasar\u0131ma eklenmi\u015f olan imzaya bu u\u00e7 ile ula\u015f\u0131labilir."
+        },
+        {
+            "path": "/v1/definitions/documenttemplates/customizationsettings/{id}/signature",
+            "method": "POST",
+            "summary": "e-Belge \u00f6zelle\u015ftirilebilir tasar\u0131ma imza eklemek i\u00e7in bu u\u00e7 kullan\u0131labilir."
+        },
+        {
+            "path": "/v1/definitions/documenttemplates/customizationsettings/{id}/signature",
+            "method": "DELETE",
+            "summary": "e-Belge \u00f6zelle\u015ftirilebilir tasar\u0131ma eklenmi\u015f olan imzay\u0131 silmek i\u00e7in bu u\u00e7 kullan\u0131labilir."
+        },
+        {
+            "path": "/v1/definitions/series",
+            "method": "GET",
+            "summary": "Serileri listeler"
+        },
+        {
+            "path": "/v1/definitions/series",
+            "method": "POST",
+            "summary": "Seri ekler"
+        },
+        {
+            "path": "/v1/definitions/series/{id}",
+            "method": "GET",
+            "summary": "Sorgulanan seriyi getirir"
+        },
+        {
+            "path": "/v1/definitions/series/{id}",
+            "method": "DELETE",
+            "summary": "Seri siler"
+        },
+        {
+            "path": "/v1/definitions/series/{serie}",
+            "method": "GET",
+            "summary": "\u00d6n eke g\u00f6re seriyi getirir"
+        },
+        {
+            "path": "/v1/definitions/series/{id}/set/{status}",
+            "method": "GET",
+            "summary": "Seri durumunu g\u00fcnceller"
+        },
+        {
+            "path": "/v1/definitions/series/{id}/setdefault",
+            "method": "GET",
+            "summary": "Seriyi varsay\u0131lan ayarlar"
+        },
+        {
+            "path": "/v1/definitions/series/{id}/{year}/setnumber/{nextNumber}",
+            "method": "GET",
+            "summary": "Saya\u00e7 g\u00fcnceller"
+        },
+        {
+            "path": "/v1/definitions/series/{serieId}/{year}/histories",
+            "method": "GET",
+            "summary": "Saya\u00e7 ge\u00e7mi\u015fi"
+        },
+        {
+            "path": "/v1/definitions/documenttemplates",
+            "method": "GET",
+            "summary": "Tasar\u0131mlar\u0131 listeler"
+        },
+        {
+            "path": "/v1/definitions/documenttemplates",
+            "method": "POST",
+            "summary": "Tasar\u0131m ekler"
+        },
+        {
+            "path": "/v1/definitions/documenttemplates/{id}",
+            "method": "GET",
+            "summary": "Tasar\u0131m dosyas\u0131n\u0131 indirir"
+        },
+        {
+            "path": "/v1/definitions/documenttemplates/{id}",
+            "method": "PUT",
+            "summary": "Tasar\u0131m\u0131 g\u00fcnceller"
+        },
+        {
+            "path": "/v1/definitions/documenttemplates/{id}",
+            "method": "DELETE",
+            "summary": "Tasar\u0131m\u0131 siler"
+        },
+        {
+            "path": "/v1/definitions/documenttemplates/{id}/setdefault",
+            "method": "GET",
+            "summary": "Tasar\u0131m\u0131 varsay\u0131lan ayarlar"
+        },
+        {
+            "path": "/v1/definitions/documenttemplates/{id}/preview",
+            "method": "POST",
+            "summary": "Tasar\u0131m\u0131 \u00f6nizler"
+        }
+    ],
+    "emm": [
+        {
+            "path": "/v1/notifications/dynamicrules",
+            "method": "GET",
+            "summary": "Kurallar\u0131 listeler"
+        },
+        {
+            "path": "/v1/notifications/dynamicrules",
+            "method": "POST",
+            "summary": "Kural olu\u015fturur"
+        },
+        {
+            "path": "/v1/notifications/dynamicrules/{id}",
+            "method": "GET",
+            "summary": "Sorgulanan kural\u0131 getirir"
+        },
+        {
+            "path": "/v1/notifications/dynamicrules/{id}",
+            "method": "PUT",
+            "summary": "Kural g\u00fcnceller"
+        },
+        {
+            "path": "/v1/notifications/dynamicrules/{id}",
+            "method": "DELETE",
+            "summary": "Kural siler"
+        },
+        {
+            "path": "/v1/vouchers/{uuid}/xml",
+            "method": "GET",
+            "summary": "XML \u0130ndir"
+        },
+        {
+            "path": "/v1/vouchers/{uuid}/pdf",
+            "method": "GET",
+            "summary": "PDF \u0130ndir"
+        },
+        {
+            "path": "/v1/vouchers/export/{fileType}",
+            "method": "POST",
+            "summary": "Toplu aktar"
+        },
+        {
+            "path": "/v1/definitions/fileexporttitles/{documentType}/titlekeys",
+            "method": "GET",
+            "summary": "Kullan\u0131labilir alanlar\u0131 listeler"
+        },
+        {
+            "path": "/v1/definitions/fileexporttitles/{documentType}/{extension}",
+            "method": "GET",
+            "summary": "Tan\u0131mlar\u0131 getirir"
+        },
+        {
+            "path": "/v1/definitions/fileexporttitles",
+            "method": "PUT",
+            "summary": "Tan\u0131mlar\u0131 g\u00fcnceller"
+        },
+        {
+            "path": "/v1/uploads/document/preview",
+            "method": "POST",
+            "summary": "Belge \u00f6nizleme"
+        },
+        {
+            "path": "/v1/uploads/document",
+            "method": "POST",
+            "summary": "Belge y\u00fckler"
+        },
+        {
+            "path": "/v1/uploads/document/{uuid}",
+            "method": "PUT",
+            "summary": "Belge g\u00fcnceller"
+        },
+        {
+            "path": "/v1/uploads/draft/send",
+            "method": "POST",
+            "summary": "Daha \u00f6nce g\u00f6nderilmi\u015f fakat taslak olan belgeleri, g\u00f6ndermek (resmile\u015ftirmek) i\u00e7in bu u\u00e7 kullan\u0131labilir."
+        },
+        {
+            "path": "/v1/tags",
+            "method": "GET",
+            "summary": "Etiketleri listeler"
+        },
+        {
+            "path": "/v1/tags",
+            "method": "POST",
+            "summary": "Etiket ekler"
+        },
+        {
+            "path": "/v1/tags/{id}",
+            "method": "GET",
+            "summary": "Sorgulanan etiketi getirir"
+        },
+        {
+            "path": "/v1/tags/{id}",
+            "method": "PUT",
+            "summary": "Etiket g\u00fcnceller"
+        },
+        {
+            "path": "/v1/tags/{id}",
+            "method": "DELETE",
+            "summary": "Etiket siler"
+        },
+        {
+            "path": "/v1/outgoing/reportmodule/reports",
+            "method": "GET",
+            "summary": "Rapor listeler"
+        },
+        {
+            "path": "/v1/outgoing/reportmodule/reports",
+            "method": "POST",
+            "summary": "Rapor olu\u015fturur"
+        },
+        {
+            "path": "/v1/outgoing/reportmodule/reports/{id}/download",
+            "method": "GET",
+            "summary": "Rapor indirir"
+        },
+        {
+            "path": "/v1/outgoing/reportmodule/templates",
+            "method": "GET",
+            "summary": "\u015eablonlar\u0131 listeler"
+        },
+        {
+            "path": "/v1/outgoing/reportmodule/templates",
+            "method": "POST",
+            "summary": "Rapor \u015fablonu olu\u015fturur"
+        },
+        {
+            "path": "/v1/outgoing/reportmodule/templates/{id}",
+            "method": "GET",
+            "summary": "Sorgulanan \u015fablonu getirir"
+        },
+        {
+            "path": "/v1/outgoing/reportmodule/templates/{id}",
+            "method": "PUT",
+            "summary": "Rapor \u015fablonunu g\u00fcnceller"
+        },
+        {
+            "path": "/v1/outgoing/reportmodule/templates/{id}",
+            "method": "DELETE",
+            "summary": "Rapor \u015eablonunu siler"
+        },
+        {
+            "path": "/v1/outgoing/reportmodule/columns",
+            "method": "GET",
+            "summary": "Kolonlar\u0131 listeler"
+        },
+        {
+            "path": "/v1/vouchers/{uuid}/usernotes",
+            "method": "GET",
+            "summary": "Kullan\u0131c\u0131 notu listeler"
+        },
+        {
+            "path": "/v1/vouchers/{uuid}/usernotes",
+            "method": "POST",
+            "summary": "Kullan\u0131c\u0131 notu ekler"
+        },
+        {
+            "path": "/v1/vouchers/{uuid}/usernotes/{id}",
+            "method": "PUT",
+            "summary": "Kullan\u0131c\u0131 notunu g\u00fcnceller"
+        },
+        {
+            "path": "/v1/vouchers/{uuid}/usernotes/{id}",
+            "method": "DELETE",
+            "summary": "Kullan\u0131c\u0131 notunu siler"
+        },
+        {
+            "path": "/v1/definitions/mailing/email/settings",
+            "method": "GET",
+            "summary": "Mail ayarlar\u0131n\u0131 getirir"
+        },
+        {
+            "path": "/v1/definitions/mailing/email/settings",
+            "method": "PUT",
+            "summary": "Mail ayarlar\u0131n\u0131 g\u00fcnceller"
+        },
+        {
+            "path": "/v1/definitions/mailing/sms/settings",
+            "method": "GET",
+            "summary": "Sms ayarlar\u0131n\u0131 getirir"
+        },
+        {
+            "path": "/v1/definitions/mailing/sms/settings",
+            "method": "PUT",
+            "summary": "Sms ayarlar\u0131n\u0131 g\u00fcnceller"
+        },
+        {
+            "path": "/v1/vouchers/cancel",
+            "method": "POST",
+            "summary": "Belgeyi iptal eder"
+        },
+        {
+            "path": "/v1/vouchers/canceled/withdraw",
+            "method": "POST",
+            "summary": "\u0130ptal i\u015flemini geri al\u0131r"
+        },
+        {
+            "path": "/v1/vouchers/tags",
+            "method": "PUT",
+            "summary": "Etiket ekler/\u00e7\u0131kar\u0131r"
+        },
+        {
+            "path": "/v1/vouchers/{uuid}/savecompanyindocument",
+            "method": "POST",
+            "summary": "Firma olarak kaydet"
+        },
+        {
+            "path": "/v1/vouchers/bulk/{operation}",
+            "method": "PUT",
+            "summary": "Yeni durum atar"
+        },
+        {
+            "path": "/v1/vouchers",
+            "method": "GET",
+            "summary": "Makbuzlar\u0131 listeler"
+        },
+        {
+            "path": "/v1/vouchers/{uuid}",
+            "method": "GET",
+            "summary": "Belge detaylar\u0131n\u0131 getirir"
+        },
+        {
+            "path": "/v1/vouchers/drafts",
+            "method": "GET",
+            "summary": "Taslak makbuzlar\u0131 listeler"
+        },
+        {
+            "path": "/v1/vouchers/drafts",
+            "method": "DELETE",
+            "summary": "Taslak belgeleri silmek i\u00e7in bu u\u00e7 kullan\u0131lablir"
+        },
+        {
+            "path": "/v1/vouchers/last",
+            "method": "GET",
+            "summary": "Son 10 makbuzlar\u0131 listeler"
+        },
+        {
+            "path": "/v1/vouchers/{uuid}/taxes",
+            "method": "GET",
+            "summary": "Vergi bilgilerini getirir"
+        },
+        {
+            "path": "/v1/vouchers/{uuid}/histories",
+            "method": "GET",
+            "summary": "\u0130\u015flem ge\u00e7mi\u015fini getirir"
+        },
+        {
+            "path": "/v1/vouchers/{uuid}/mailhistories",
+            "method": "GET",
+            "summary": "Mail ge\u00e7mi\u015fini getirir"
+        },
+        {
+            "path": "/v1/vouchers/{uuid}/mailaddresses",
+            "method": "GET",
+            "summary": "Mail adreslerini getirir"
+        },
+        {
+            "path": "/v1/vouchers/canceled",
+            "method": "GET",
+            "summary": "\u0130ptal edilen makbuzlar"
+        },
+        {
+            "path": "/v1/vouchers/canceled/last",
+            "method": "GET",
+            "summary": "\u0130ptal edilen son 10 makbuzlar"
+        },
+        {
+            "path": "/v1/vouchers/{uuid}/html",
+            "method": "GET",
+            "summary": "Belgeyi g\u00f6r\u00fcnt\u00fcler"
+        },
+        {
+            "path": "/v1/vouchers/email/send",
+            "method": "POST",
+            "summary": "Belgeyi mail olarak iletir"
+        },
+        {
+            "path": "/v1/definitions/documenttemplates/customizationsettings",
+            "method": "GET",
+            "summary": "Tasar\u0131m ayarlar\u0131 d\u00f6n\u00fcl\u00fcr"
+        },
+        {
+            "path": "/v1/definitions/documenttemplates/customizationsettings",
+            "method": "POST",
+            "summary": "e-Belge \u00f6zelle\u015ftirilebilir tasar\u0131m eklemek i\u00e7in kullan\u0131l\u0131r."
+        },
+        {
+            "path": "/v1/definitions/documenttemplates/customizationsettings/{id}",
+            "method": "GET",
+            "summary": "Sorgulanan ayar\u0131 getirir"
+        },
+        {
+            "path": "/v1/definitions/documenttemplates/customizationsettings/{id}",
+            "method": "PUT",
+            "summary": "e-Belge \u00f6zelle\u015ftirilebilir tasar\u0131m\u0131n\u0131 g\u00fcncellemek i\u00e7in kullan\u0131l\u0131r."
+        },
+        {
+            "path": "/v1/definitions/documenttemplates/customizationsettings/{id}",
+            "method": "DELETE",
+            "summary": "e-Belge \u00f6zelle\u015ftirilebilir tasar\u0131m\u0131n\u0131 silmek i\u00e7in kullan\u0131l\u0131r."
+        },
+        {
+            "path": "/v1/definitions/documenttemplates/customizationsettings/{id}/setdefault",
+            "method": "GET",
+            "summary": ""
+        },
+        {
+            "path": "/v1/definitions/documenttemplates/customizationsettings/{id}/preview",
+            "method": "POST",
+            "summary": "Tasar\u0131m\u0131 \u00f6nizler"
+        },
+        {
+            "path": "/v1/definitions/documenttemplates/customizationsettings/{id}/logo",
+            "method": "GET",
+            "summary": "e-Belge \u00f6zelle\u015ftirilebilir tasar\u0131ma eklenmi\u015f olan logoya bu u\u00e7 ile ula\u015f\u0131labilir."
+        },
+        {
+            "path": "/v1/definitions/documenttemplates/customizationsettings/{id}/logo",
+            "method": "POST",
+            "summary": "e-Belge \u00f6zelle\u015ftirilebilir tasar\u0131ma logo eklemek i\u00e7in bu u\u00e7 kullan\u0131labilir."
+        },
+        {
+            "path": "/v1/definitions/documenttemplates/customizationsettings/{id}/logo",
+            "method": "DELETE",
+            "summary": "e-Belge \u00f6zelle\u015ftirilebilir tasar\u0131ma eklenmi\u015f olan logoyu silmek i\u00e7in bu u\u00e7 kullan\u0131labilir."
+        },
+        {
+            "path": "/v1/definitions/documenttemplates/customizationsettings/{id}/stamp",
+            "method": "GET",
+            "summary": "e-Belge \u00f6zelle\u015ftirilebilir tasar\u0131ma eklenmi\u015f olan ka\u015feye bu u\u00e7 ile ula\u015f\u0131labilir."
+        },
+        {
+            "path": "/v1/definitions/documenttemplates/customizationsettings/{id}/stamp",
+            "method": "POST",
+            "summary": "e-Belge \u00f6zelle\u015ftirilebilir tasar\u0131ma ka\u015fe eklemek i\u00e7in bu u\u00e7 kullan\u0131labilir."
+        },
+        {
+            "path": "/v1/definitions/documenttemplates/customizationsettings/{id}/stamp",
+            "method": "DELETE",
+            "summary": "e-Belge \u00f6zelle\u015ftirilebilir tasar\u0131ma eklenmi\u015f olan ka\u015feyi silmek i\u00e7in bu u\u00e7 kullan\u0131labilir."
+        },
+        {
+            "path": "/v1/definitions/documenttemplates/customizationsettings/{id}/signature",
+            "method": "GET",
+            "summary": "e-Belge \u00f6zelle\u015ftirilebilir tasar\u0131ma eklenmi\u015f olan imzaya bu u\u00e7 ile ula\u015f\u0131labilir."
+        },
+        {
+            "path": "/v1/definitions/documenttemplates/customizationsettings/{id}/signature",
+            "method": "POST",
+            "summary": "e-Belge \u00f6zelle\u015ftirilebilir tasar\u0131ma imza eklemek i\u00e7in bu u\u00e7 kullan\u0131labilir."
+        },
+        {
+            "path": "/v1/definitions/documenttemplates/customizationsettings/{id}/signature",
+            "method": "DELETE",
+            "summary": "e-Belge \u00f6zelle\u015ftirilebilir tasar\u0131ma eklenmi\u015f olan imzay\u0131 silmek i\u00e7in bu u\u00e7 kullan\u0131labilir."
+        },
+        {
+            "path": "/v1/definitions/series",
+            "method": "GET",
+            "summary": "Serileri listeler"
+        },
+        {
+            "path": "/v1/definitions/series",
+            "method": "POST",
+            "summary": "Seri ekler"
+        },
+        {
+            "path": "/v1/definitions/series/{id}",
+            "method": "GET",
+            "summary": "Sorgulanan seriyi getirir"
+        },
+        {
+            "path": "/v1/definitions/series/{id}",
+            "method": "DELETE",
+            "summary": "Seri siler"
+        },
+        {
+            "path": "/v1/definitions/series/{serie}",
+            "method": "GET",
+            "summary": "\u00d6n eke g\u00f6re seriyi getirir"
+        },
+        {
+            "path": "/v1/definitions/series/{id}/set/{status}",
+            "method": "GET",
+            "summary": "Seri durumunu g\u00fcnceller"
+        },
+        {
+            "path": "/v1/definitions/series/{id}/setdefault",
+            "method": "GET",
+            "summary": "Seriyi varsay\u0131lan ayarlar"
+        },
+        {
+            "path": "/v1/definitions/series/{id}/{year}/setnumber/{nextNumber}",
+            "method": "GET",
+            "summary": "Saya\u00e7 g\u00fcnceller"
+        },
+        {
+            "path": "/v1/definitions/series/{serieId}/{year}/histories",
+            "method": "GET",
+            "summary": "Saya\u00e7 ge\u00e7mi\u015fi"
+        },
+        {
+            "path": "/v1/definitions/documenttemplates",
+            "method": "GET",
+            "summary": "Tasar\u0131mlar\u0131 listeler"
+        },
+        {
+            "path": "/v1/definitions/documenttemplates",
+            "method": "POST",
+            "summary": "Tasar\u0131m ekler"
+        },
+        {
+            "path": "/v1/definitions/documenttemplates/{id}",
+            "method": "GET",
+            "summary": "Tasar\u0131m dosyas\u0131n\u0131 indirir"
+        },
+        {
+            "path": "/v1/definitions/documenttemplates/{id}",
+            "method": "PUT",
+            "summary": "Tasar\u0131m\u0131 g\u00fcnceller"
+        },
+        {
+            "path": "/v1/definitions/documenttemplates/{id}",
+            "method": "DELETE",
+            "summary": "Tasar\u0131m\u0131 siler"
+        },
+        {
+            "path": "/v1/definitions/documenttemplates/{id}/setdefault",
+            "method": "GET",
+            "summary": "Tasar\u0131m\u0131 varsay\u0131lan ayarlar"
+        },
+        {
+            "path": "/v1/definitions/documenttemplates/{id}/preview",
+            "method": "POST",
+            "summary": "Tasar\u0131m\u0131 \u00f6nizler"
+        }
+    ]
+}

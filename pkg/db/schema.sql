@@ -405,3 +405,155 @@ CREATE TABLE IF NOT EXISTS system_logs (
     ip_address TEXT,
     created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
+
+-- E-MM Vouchers Table (E-Müstahsil Makbuzları)
+CREATE TABLE IF NOT EXISTS e_mm_vouchers (
+    id BIGSERIAL PRIMARY KEY,
+    company_id UUID NOT NULL REFERENCES companies(id) ON DELETE CASCADE,
+
+    -- E-MM Kimlik Bilgileri
+    uuid UUID NOT NULL UNIQUE,            -- ETTN
+    voucher_number VARCHAR(16),           -- Makbuz No
+    voucher_type_code VARCHAR(20),        -- E-MM vb.
+    direction VARCHAR(10) NOT NULL,       -- Genellikle OUTGOING
+
+    -- Tarih ve Notlar
+    issue_date DATE NOT NULL,
+    issue_time TIME,
+    user_note TEXT,                       -- Kullanıcı Notu
+    document_note TEXT,                   -- Belge Notu
+
+    -- Cari Bilgileri
+    sender_vkn_tckn VARCHAR(11) NOT NULL,
+    receiver_vkn_tckn VARCHAR(11) NOT NULL,
+    receiver_name TEXT NOT NULL,
+    receiver_address TEXT,
+    receiver_city TEXT,
+    receiver_country TEXT,
+
+    -- Tutar Bilgileri
+    total_amount DECIMAL(18, 2) NOT NULL,
+    tax_amount DECIMAL(18, 2) DEFAULT 0,
+    payable_amount DECIMAL(18, 2) NOT NULL,
+    currency_code VARCHAR(3) DEFAULT 'TRY',
+
+    -- Durum Bilgileri
+    status VARCHAR(50) DEFAULT 'DRAFT',   -- DRAFT, PENDING, APPROVED, CANCELED vb.
+    status_description TEXT,
+
+    -- E-Posta Gönderim Durumu
+    is_mail_sent BOOLEAN DEFAULT FALSE,
+    mail_send_date TIMESTAMP WITH TIME ZONE,
+
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+);
+
+DROP TRIGGER IF EXISTS update_e_mm_vouchers_updated_at ON e_mm_vouchers;
+CREATE TRIGGER update_e_mm_vouchers_updated_at BEFORE UPDATE ON e_mm_vouchers FOR EACH ROW EXECUTE PROCEDURE update_updated_at_column();
+
+-- E-MM Voucher Items Table (E-Müstahsil Makbuzu Satırları)
+CREATE TABLE IF NOT EXISTS e_mm_voucher_items (
+    id BIGSERIAL PRIMARY KEY,
+    e_mm_voucher_id BIGINT NOT NULL REFERENCES e_mm_vouchers(id) ON DELETE CASCADE,
+    product_id BIGINT REFERENCES products(id) ON DELETE SET NULL,
+
+    line_number INTEGER,
+    name TEXT NOT NULL,
+    description TEXT,
+
+    -- Miktar ve Fiyat
+    quantity DECIMAL(18, 4) NOT NULL,
+    unit_code VARCHAR(10) NOT NULL,
+    unit_price DECIMAL(18, 4) NOT NULL,
+    total_amount DECIMAL(18, 2) NOT NULL,
+
+    -- Vergiler (Stopaj vb. e-MM özel)
+    tax_rate DECIMAL(5, 2) DEFAULT 0,
+    tax_amount DECIMAL(18, 2) DEFAULT 0,
+
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+);
+
+-- E-SMM Vouchers Table (E-Serbest Meslek Makbuzları)
+CREATE TABLE IF NOT EXISTS e_smm_vouchers (
+    id BIGSERIAL PRIMARY KEY,
+    company_id UUID NOT NULL REFERENCES companies(id) ON DELETE CASCADE,
+
+    -- E-SMM Kimlik Bilgileri
+    uuid UUID NOT NULL UNIQUE,            -- ETTN
+    voucher_number VARCHAR(16),           -- Makbuz No
+    voucher_type_code VARCHAR(20),        -- E-SMM vb.
+    direction VARCHAR(10) NOT NULL,       -- Genellikle OUTGOING
+
+    -- Tarih ve Notlar
+    issue_date DATE NOT NULL,
+    issue_time TIME,
+    user_note TEXT,                       -- Kullanıcı Notu
+    document_note TEXT,                   -- Belge Notu
+
+    -- Cari Bilgileri
+    sender_vkn_tckn VARCHAR(11) NOT NULL,
+    receiver_vkn_tckn VARCHAR(11) NOT NULL,
+    receiver_name TEXT NOT NULL,
+    receiver_address TEXT,
+    receiver_city TEXT,
+    receiver_country TEXT,
+
+    -- Tutar Bilgileri
+    total_amount DECIMAL(18, 2) NOT NULL,
+    tax_amount DECIMAL(18, 2) DEFAULT 0,
+    payable_amount DECIMAL(18, 2) NOT NULL,
+    currency_code VARCHAR(3) DEFAULT 'TRY',
+
+    -- Durum Bilgileri
+    status VARCHAR(50) DEFAULT 'DRAFT',   -- DRAFT, PENDING, APPROVED, CANCELED vb.
+    status_description TEXT,
+
+    -- E-Posta Gönderim Durumu
+    is_mail_sent BOOLEAN DEFAULT FALSE,
+    mail_send_date TIMESTAMP WITH TIME ZONE,
+
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+);
+
+DROP TRIGGER IF EXISTS update_e_smm_vouchers_updated_at ON e_smm_vouchers;
+CREATE TRIGGER update_e_smm_vouchers_updated_at BEFORE UPDATE ON e_smm_vouchers FOR EACH ROW EXECUTE PROCEDURE update_updated_at_column();
+
+-- E-SMM Voucher Items Table (E-Serbest Meslek Makbuzu Satırları)
+CREATE TABLE IF NOT EXISTS e_smm_voucher_items (
+    id BIGSERIAL PRIMARY KEY,
+    e_smm_voucher_id BIGINT NOT NULL REFERENCES e_smm_vouchers(id) ON DELETE CASCADE,
+    product_id BIGINT REFERENCES products(id) ON DELETE SET NULL,
+
+    line_number INTEGER,
+    name TEXT NOT NULL,
+    description TEXT,
+
+    -- Miktar ve Fiyat
+    quantity DECIMAL(18, 4) NOT NULL,
+    unit_code VARCHAR(10) NOT NULL,
+    unit_price DECIMAL(18, 4) NOT NULL,
+    total_amount DECIMAL(18, 2) NOT NULL,
+
+    -- Vergiler (Stopaj vb. e-SMM özel)
+    tax_rate DECIMAL(5, 2) DEFAULT 0,
+    tax_amount DECIMAL(18, 2) DEFAULT 0,
+
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+);
+
+-- E-MM İndeksleri
+CREATE INDEX IF NOT EXISTS idx_e_mm_company_date ON e_mm_vouchers(company_id, issue_date);
+CREATE INDEX IF NOT EXISTS idx_e_mm_uuid ON e_mm_vouchers(uuid);
+CREATE INDEX IF NOT EXISTS idx_e_mm_sender_vkn ON e_mm_vouchers(sender_vkn_tckn);
+CREATE INDEX IF NOT EXISTS idx_e_mm_receiver_vkn ON e_mm_vouchers(receiver_vkn_tckn);
+CREATE INDEX IF NOT EXISTS idx_e_mm_items_id ON e_mm_voucher_items(e_mm_voucher_id);
+
+-- E-SMM İndeksleri
+CREATE INDEX IF NOT EXISTS idx_e_smm_company_date ON e_smm_vouchers(company_id, issue_date);
+CREATE INDEX IF NOT EXISTS idx_e_smm_uuid ON e_smm_vouchers(uuid);
+CREATE INDEX IF NOT EXISTS idx_e_smm_sender_vkn ON e_smm_vouchers(sender_vkn_tckn);
+CREATE INDEX IF NOT EXISTS idx_e_smm_receiver_vkn ON e_smm_vouchers(receiver_vkn_tckn);
+CREATE INDEX IF NOT EXISTS idx_e_smm_items_id ON e_smm_voucher_items(e_smm_voucher_id);

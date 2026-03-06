@@ -1,0 +1,90 @@
+--- internal/service/voucher_service.go
++++ internal/service/voucher_service.go
+@@ -3,11 +3,14 @@
+ import (
+	"bytes"
+	"encoding/json"
+	"fmt"
+	"io/ioutil"
++	"mime/multipart"
+	"net/http"
+	"time"
+
+	"aygit-muhasebe-integration/internal/models"
+ )
+
+@@ -34,13 +37,18 @@
+ func (s *NESVoucherService) executeRequest(method, endpoint string, company *models.Company, payload []byte) ([]byte, error) {
+	req, err := http.NewRequest(method, s.BaseURL+endpoint, bytes.NewBuffer(payload))
+	if err != nil {
+		return nil, fmt.Errorf("failed to create request: %w", err)
+	}
+
+	req.Header.Set("Authorization", "Bearer "+company.GetNesAPIKey())
+-	req.Header.Set("Content-Type", "application/json")
++
++	// Only set content type to JSON if it's not a multipart request setup earlier
++	if req.Header.Get("Content-Type") == "" {
++		req.Header.Set("Content-Type", "application/json")
++	}
++
+	if company.Environment == "TEST" {
+		req.Header.Set("Environment", "TEST")
+	}
+
+	resp, err := s.Client.Do(req)
+@@ -79,16 +87,37 @@
+	return string(resp), nil
+ }
+
+ func (s *NESVoucherService) UploadDocument(company *models.Company, data []byte) (string, error) {
+-	// NES expects multipart/form-data or specific JSON structure depending on the exact doc
+-	// For simplicity, passing JSON bytes
+-	resp, err := s.executeRequest("POST", "/v1/uploads/document", company, data)
++	// NES expects multipart/form-data for document upload with "file" field
++	body := &bytes.Buffer{}
++	writer := multipart.NewWriter(body)
++
++	part, err := writer.CreateFormFile("file", "document.json")
++	if err != nil {
++		return "", err
++	}
++	part.Write(data)
++
++	err = writer.Close()
++	if err != nil {
++		return "", err
++	}
++
++	req, err := http.NewRequest("POST", s.BaseURL+"/v1/uploads/document", body)
++	if err != nil {
++		return "", fmt.Errorf("failed to create upload request: %w", err)
++	}
++
++	req.Header.Set("Authorization", "Bearer "+company.GetNesAPIKey())
++	req.Header.Set("Content-Type", writer.FormDataContentType())
++	if company.Environment == "TEST" {
++		req.Header.Set("Environment", "TEST")
++	}
++
++	resp, err := s.Client.Do(req)
+	if err != nil {
+-		return "", err
++		return "", fmt.Errorf("request failed: %w", err)
+	}
+-	return string(resp), nil
++	defer resp.Body.Close()
++
++	respBody, err := ioutil.ReadAll(resp.Body)
++	if err != nil {
++		return "", fmt.Errorf("failed to read response body: %w", err)
++	}
++
++	if resp.StatusCode < 200 || resp.StatusCode >= 300 {
++		return "", fmt.Errorf("NES API error (status %d): %s", resp.StatusCode, string(respBody))
++	}
++
++	return string(respBody), nil
+ }
+
+ func (s *NESVoucherService) SendDraftVoucher(company *models.Company, uuids []string) (string, error) {
